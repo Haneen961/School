@@ -1,0 +1,216 @@
+
+tabels 
+////////////////
+********* 1 *********
+create table address(
+address_id NUMBER(9)  constraint address_id_num_pk primary key,
+area_name VARCHAR2(30),
+city_name VARCHAR2(30),
+block_name VARCHAR2(30), 
+street_name VARCHAR2(30)
+);
+********* 2 *********
+create table School
+(
+School_ID NUMBER(9) constraint school_id_num_pk primary key ,
+School_Name VARCHAR2(30) ,
+address_id NUMBER(9) ,
+School_ministry VARCHAR2(20),
+constraint sc_ad_id_num_fk foreign key (address_id) references address(address_id) ON DELETE CASCADE    
+);
+// (لاي مديرية تابعة المدرسة)
+
+********* 3 *********
+create table Subject
+(
+Subject_ID NUMBER(9) constraint sbject_id_num_pk primary key ,
+Subject_Name VARCHAR2(30)
+);
+********* 4 *********
+create table Stu_Level
+(
+Level_ID NUMBER(2) constraint stu_level_id_num_pk primary key ,
+Level_Name VARCHAR2(20),
+numOfDivision NUMBER(2)
+);
+********* 5 *********
+// الشعبة
+create table AcademicDivision (   
+Division_id NUMBER(2) ,
+level_id NUMBER(2) ,
+number_of_student NUMBER(9) ,
+CONSTRAINT Ac_stlevel_id_fk foreign key (level_id) references Stu_Level(Level_ID) ON DELETE CASCADE ,
+CONSTRAINT Ac_level_id_num_pk PRIMARY KEY ( Division_id ,level_id) 
+);
+
+********* 6 *********
+create table StaffType
+(
+ID NUMBER(9) CONSTRAINT staff_ty_id_num_pk  primary key ,
+Name VARCHAR2(20)
+);
+********* 7 *********
+create table Staff
+(
+Staff_ID NUMBER(9) CONSTRAINT staff_id_num_pk primary key ,
+IDStaffType NUMBER(9),
+Staff_Full_Name VARCHAR2(100) NOT NULL,
+LastNameFather VARCHAR2(20) NOT NULL,
+LastNameMother VARCHAR2(20) NOT NULL,
+DateOfBirth date NOT NULL,
+PlaceOfBirth VARCHAR2(20) default'palestine' NOT NULL,
+nationality VARCHAR2(20) default'palestinian' NOT NULL,
+Sex CHAR NOT NULL,
+social_status VARCHAR2(10) NOT NULL, 
+religion VARCHAR2(20) default'Moslem' NOT NULL,
+Telephone NUMBER(10) NOT NULL,
+MobilePhone NUMBER(10) NOT NULL,
+number_of_family_members NUMBER(2) NOT NULL,
+email VARCHAR2(30) NOT NULL,
+FatherContact NUMBER(10) NOT NULL,
+MotherContact NUMBER(10) NOT NULL,
+FatherPlaceOfWork VARCHAR2(20),
+MotherPlaceOfWork VARCHAR2(20),
+DateOfHiring date NOT NULL ,
+YearsOfService NUMBER(9),
+Specialty VARCHAR2(20) NOT NULL,
+Salary NUMBER(9) ,
+address_id NUMBER(9) ,
+blood_type VARCHAR2(10) NOT NULL ,
+constraint staff_date_ch check(DateOfHiring >DateOfBirth),
+constraint staff_salary_ch CHECK (Salary >=0),
+constraint s_t_id_num_fk  foreign key (IDStaffType) references StaffType (ID) ON DELETE CASCADE ,
+constraint s_ad_id_num_fk  foreign key (address_id) references address(address_id) ON DELETE CASCADE 
+);
+
+********* 8 *********
+create table Student
+(
+Student_ID NUMBER(9) constraint stu_id_num_pk primary key ,
+Name VARCHAR2(30) NOT NULL ,            
+LastNameFather VARCHAR2(30),
+LastNameMother VARCHAR2(30),
+guardian_name  VARCHAR2(30) NOT NULL,
+guardian_national_id NUMBER(9) NOT NULL,
+guardian_relation VARCHAR2(10) default'father' NOT NULL ,
+DateOfBirth date,
+PlaceOfBirth VARCHAR2(30) default'palestine',
+number_of_family_members NUMBER(2) NOT NULL,
+Sex CHAR,
+nationality VARCHAR2(20) default'palestinian' NOT NULL,
+religion VARCHAR2(20) default'Moslem' NOT NULL ,
+Telephone NUMBER(10),
+address_id NUMBER(9) ,
+FatherProfession VARCHAR2(30),
+MotherProfession VARCHAR2(30),
+FatherPlaceOfWork VARCHAR2(30),
+MotherPlaceOfWork VARCHAR2(30),
+blood_type VARCHAR2(10) NOT NULL,
+Observations VARCHAR2(100) , 
+Division_id NUMBER(2) ,
+level_id NUMBER(2) ,
+CONSTRAINT st_AC_level_id_num_fk FOREIGN KEY (Division_id , level_id ) references AcademicDivision (Division_id ,level_id) ON DELETE CASCADE,
+constraint st_ad_id_num_fk  foreign key (address_id) references address(address_id) ON DELETE CASCADE 
+);
+********* 9 *********
+create table Attendance
+(
+IDStudent NUMBER(9),
+Attended VARCHAR2(10),
+Attendance_Date date ,
+CONSTRAINT At_st_id_num_fk foreign key (IDStudent) references Student(Student_ID) ON DELETE CASCADE ,
+CONSTRAINT At_st_id_num_date_pk PRIMARY KEY (IDStudent ,Attendance_Date) 
+);
+********* 10 *********
+CREATE TABLE teacher (
+teacher_id NUMBER (9) NOT NULL ,
+teacher_end_date DATE,
+teacher_specialty VARCHAR2(20) NOT NULL ,
+CONSTRAINT teacher_staff_id_num_fk foreign key(teacher_id) REFERENCES Staff(Staff_ID) ON DELETE CASCADE,
+CONSTRAINT teacher_id_num_pk PRIMARY KEY (teacher_id)
+ );
+********* 11 *********
+create table ScoreRecord
+(
+IDStudent NUMBER(9) ,
+IDSubject NUMBER(9) ,
+teacher_id NUMBER(9),
+FirstMonthGrade NUMBER(2),
+medTermGrade NUMBER(2),
+ThirdMonthGrade NUMBER(2),
+FinalExamGrade NUMBER(2),
+FinalGrade NUMBER(3),
+semester_date date ,
+CONSTRAINT score_stu_id_num_fk foreign key (IDStudent) references Student(Student_ID) ON DELETE CASCADE,
+CONSTRAINT score_sub_id_num_fk foreign key (IDSubject) references Subject(Subject_ID) ON DELETE CASCADE,
+CONSTRAINT score_teacher_id_num_fk foreign key (teacher_id)  references teacher (teacher_id) ON DELETE CASCADE,
+CONSTRAINT Score_pk PRIMARY KEY ( IDStudent ,IDSubject , semester_date ,teacher_id ) 
+);
+********* 12 *********
+create table Club (
+Club_id NUMBER(3) CONSTRAINT club_id_num_pk PRIMARY KEY ,
+Club_name VARCHAR2(30),
+club_head NUMBER(9) ,
+numOfMembers NUMBER(2) ,
+CONSTRAINT clhead_teacher_id_num_fk foreign key(club_head) references teacher(teacher_id) ON DELETE CASCADE
+);
+
+********* 13 *********
+create table Member (
+Member_id NUMBER(9) ,
+Club_id NUMBER(3) ,
+CONSTRAINT Member_stu_id_num_fk  foreign key (Member_id) references Student(Student_ID) ON DELETE CASCADE,
+CONSTRAINT Member_id_num_pk PRIMARY KEY (Member_id),
+CONSTRAINT Member_club_id_num_fk foreign key(Club_id) references Club (Club_id) ON DELETE CASCADE
+ ); 
+ 
+ ********* 14 *********
+ CREATE TABLE floor (
+floor_number NUMBER(2) CONSTRAINT floor_number_pk PRIMARY KEY,
+floor_desc VARCHAR2(100)
+ );
+
+********* 15 *********
+CREATE TABLE room (
+room_number NUMBER (3) CONSTRAINT room_number_num_pk PRIMARY KEY ,
+floor_number NUMBER (2),
+capacity NUMBER (5) NOT NULL,
+CONSTRAINT room_floor_num_fk foreign key(floor_number) references floor (floor_number) ON DELETE CASCADE 
+);
+ 
+
+********* 16 *********
+CREATE TABLE item (
+item_id NUMBER (3) CONSTRAINT item_id_num_pk PRIMARY KEY,
+item_name VARCHAR2(30) NOT NULL,
+item_description VARCHAR2(200) NOT NULL );
+
+********* 17 *********
+CREATE TABLE room_items (
+item_id NUMBER (3) NOT NULL  ,
+room_number NUMBER (3) NOT NULL ,
+quantity NUMBER (5) NOT NULL,
+CONSTRAINT room_item_id_num_fk foreign key(item_id) REFERENCES item (item_id) ON DELETE CASCADE ,
+CONSTRAINT room_items_number_num_fk foreign key (room_number) REFERENCES room (room_number) ON DELETE CASCADE ,
+CONSTRAINT  room_items_id_num_pk PRIMARY KEY (item_id , room_number ));
+
+
+********* 18 *********
+
+create table corona_staff(
+Staff_ID NUMBER(9) ,
+The_diagnosis varchar2(40) ,
+Diagnostic_date date ,
+CONSTRAINT co_sta_id_num_fk foreign key(Staff_ID) references Staff (Staff_ID),
+CONSTRAINT co_sta_id_num_pk PRIMARY KEY (Staff_ID)
+);
+*********19*********
+create table corona_student(
+Student_ID NUMBER(9),
+The_diagnosis varchar2(40) ,
+Diagnostic_date date,
+number_of_brother_in_school number(2) ,
+CONSTRAINT co_stu_id_num_fk foreign key(Student_ID) references Student (Student_ID),
+CONSTRAINT co_stu_id_num_pk PRIMARY KEY (Student_ID)
+);
+

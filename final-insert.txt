@@ -1,0 +1,1141 @@
+
+***** address : *****
+INSERT INTO address VALUES(10,'Gaza Strip','Gaza','Naser','Elgesser');
+INSERT INTO address VALUES(20,'Gaza North','Jabalia','Al Nazlah','Al Saftawy');
+INSERT INTO address VALUES(30,'Rafah','Rafah','Yebna','Kir');
+INSERT INTO address VALUES(40,'Gaza Strip','Gaza','jalaa','abo al ameen');
+INSERT INTO address VALUES(50,'Gaza Strip','Gaza','jalaa','bahloul');
+
+***** school : *****
+INSERT INTO school VALUES (10,'ramez fakhra',10,'West Gaza');
+
+***** subject: *****
+INSERT INTO subject VALUES (11,'math');
+INSERT INTO subject VALUES (12,'arabic');
+INSERT INTO subject VALUES (13,'english');
+INSERT INTO subject VALUES (14,'Science');
+INSERT INTO subject VALUES (15,'technology');
+INSERT INTO subject VALUES (16,'Islamic Education');
+INSERT INTO subject VALUES (17,'Social patriotism');
+
+
+
+***** Stu_Level : *****
+INSERT INTO Stu_Level VALUES (1,'first grade',2);
+INSERT INTO Stu_Level VALUES (2,'second grade',2);
+INSERT INTO Stu_Level VALUES (3,'third grade',2);
+INSERT INTO Stu_Level VALUES (4,'fourth grade',2);
+INSERT INTO Stu_Level VALUES (5,'fifth grade',2);
+INSERT INTO Stu_Level VALUES (6,'sixth grade',2);
+
+
+
+***** AcademicDivision : *****
+INSERT INTO AcademicDivision  VALUES (1,1,5);
+INSERT INTO AcademicDivision  VALUES (2,1,4);
+
+INSERT INTO AcademicDivision  VALUES (1,2,6);
+INSERT INTO AcademicDivision  VALUES (2,2,4);
+
+INSERT INTO AcademicDivision  VALUES (1,3,6);
+INSERT INTO AcademicDivision  VALUES (2,3,5);
+
+INSERT INTO AcademicDivision  VALUES (1,4,5);
+INSERT INTO AcademicDivision  VALUES (2,4,4);
+
+INSERT INTO AcademicDivision  VALUES (1,5,5);
+INSERT INTO AcademicDivision  VALUES (2,5,5);
+
+INSERT INTO AcademicDivision  VALUES (1,6,6);
+INSERT INTO AcademicDivision  VALUES (2,6,5);
+
+***** StaffType : *****
+INSERT INTO StaffType values (6060,'manager');
+INSERT INTO StaffType values (5050,'assistant manager');
+INSERT INTO StaffType values (4040,'secretary');
+INSERT INTO StaffType values (3030,'teacher');
+INSERT INTO StaffType values (2020,'social guide');
+INSERT INTO StaffType values (1010,'security guard');
+
+
+***** Student : *****
+create sequence studentseq  increment by 20  start with 100 maxvalue 100000;
+create sequence fatherseq  increment by 22  start with 200 maxvalue 1600;
+          level(1/2)
+		  
+INSERT INTO Student VALUES (studentseq.nextval , 'Haneen Almasry' ,'massry' ,'massry' ,'abd alsalam' ,fatherseq.nextval, 'father',TO_DATE('19/04/2014' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',20987963 ,10 ,'null' , 'null','null' , 'null','B+','There is no notes',2 ,1);
+
+INSERT INTO Student VALUES (studentseq.nextval , 'Hanaa mass' ,'mass' ,'mass' ,'kaled' ,fatherseq.nextval, 'father',TO_DATE('20/05/2014' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2099873 ,20 ,'teacher' , 'null','km_school' , 'null','B-','There is no notes',2 ,1);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'maha saleh' ,'saleh' ,'mass' ,'saleh' ,fatherseq.nextval, 'father',TO_DATE('22/06/2014' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2078905 ,10 ,'doctor' , 'teacher','aloropy_hospital' , 'alawqaf_school','A-','A hardworking and distinguished student',2 ,1);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'rola ayman' ,'ayman' ,'sehwail' ,'ayman' ,fatherseq.nextval, 'father',TO_DATE('30/07/2014' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2034521 ,20 ,'eng' , 'null','kl_company' , 'null','A+','A middle level student',2 ,1);
+ 
+       level(1/1)
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'huda ahmed' ,'ahmed' ,'rady' ,'ahmed' ,fatherseq.nextval, 'father',TO_DATE('09/09/2014' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2078993 ,30 ,'teacher' , 'eng','km_school' , 'ha_company','O+','A hardworking and distinguished student',1 ,1);
+ 
+
+ INSERT INTO Student VALUES (studentseq.nextval , 'rana jamal' ,'jamal' ,'khodary' ,'jamal' ,fatherseq.nextval, 'father',TO_DATE('12/11/2014' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',20990763 ,10 ,'Baker' , 'Baker','Family bakery' , 'Family bakery','B+','There is no notes',1 ,1);
+
+INSERT INTO Student VALUES (studentseq.nextval , 'Hanaa jomaa' ,'jomaa' ,'abuZaid' ,'jomaa' ,fatherseq.nextval, 'father',TO_DATE('20/01/2014' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2090973 ,20 ,'teacher' , 'teacher','km_school' , 'alawda_school','B-','There is no notes',1 ,1);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'ruba ahmed' ,'ahmed' ,'qedra' ,'ahmed' ,fatherseq.nextval, 'father',TO_DATE('22/02/2014' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2078905 ,30 ,'Driver' , 'teacher','null' , 'alawqaf_school','A-','A hardworking and distinguished student',1 ,1);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'nada hatem' ,'hatem' ,'sehwail' ,'hatem' ,fatherseq.nextval, 'father',TO_DATE('31/08/2014' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2034521 ,20 ,'eng' , 'doctor','rr_company' , 'aloropy_hospital','A+','A middle level student',1 ,1);
+ 
+            level(2/1)
+			
+INSERT INTO Student VALUES (studentseq.nextval , 'aseel samy' ,'samy' ,'faraj' ,'samy' ,fatherseq.nextval, 'father',TO_DATE('23/08/2013' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2034500 ,40 ,'Worker' , 'House wife','rm_company' , 'null','O+','A middle level student',1 ,2);
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'areej samy' ,'samy' ,'faraj' ,'samy' ,fatherseq.nextval, 'father',TO_DATE('23/08/2013' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2034500 ,40 ,'Worker' , 'House wife','rm_company' , 'null','O-','A hardworking and distinguished student',1 ,2);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'rahaf nesrallah' ,'nesrallah' ,'awad' ,'nesrallah' ,fatherseq.nextval, 'father',TO_DATE('11/06/2013' ,'dd/mm/yyyy'),'palestine',
+ 9 ,'f' ,'palestinian','Moslem',null ,40 ,'Lawyer' , 'House wife','Lawyers Union' , 'null','B-','A hardworking and distinguished student',1 ,2);
+ 
+   INSERT INTO Student VALUES (studentseq.nextval , 'nahla abuamer' ,'amer' ,'halapy' ,'amer' ,fatherseq.nextval, 'father',TO_DATE('15/10/2013' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',null ,10 ,'Lawyer' , 'teacher','Lawyers Office' , 'ehsan_school','B+','Low discipline',1 ,2);
+ 
+    INSERT INTO Student VALUES (studentseq.nextval , 'rama alshaer' ,'mohamed' ,'alshaer' ,'mohamed' ,fatherseq.nextval, 'father',TO_DATE('13/10/2013' ,'dd/mm/yyyy'),'palestine',
+ 7 ,'f' ,'palestinian','Moslem',2098980 ,50 ,'builder' , 'null',' null' , 'null','B+','Not impolite',1 ,2);
+ 
+     INSERT INTO Student VALUES (studentseq.nextval , 'nouran ali' ,'ali' ,'abuDaqqa' ,'ali' ,fatherseq.nextval, 'father',TO_DATE('04/05/2013' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',2098981 ,30 ,'driver' , 'House wife',' null' , 'null','A+','Polite and energetic',1 ,2);
+ 
+ 
+           level(2/2)
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'Haneen ahmed' ,'ahmed' ,'asfoer' ,'ahmed' ,fatherseq.nextval, 'father',TO_DATE('06/08/2013' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2098881 ,20 ,'Engineer' , 'House wife',' null' , 'null','A+','Polite and energetic',2 ,2);
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'Alaa fayze' ,'fayze' ,'saeid' ,'ahmed' ,fatherseq.nextval, 'father',TO_DATE('29/12/2013' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2098881 ,30 ,'barber' , 'accountant',' null' , 'mr_company','B+','Not impolite',2 ,2);
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'Sarah omar' ,'omar' ,'arade' ,'mohamed' ,fatherseq.nextval, 'father',TO_DATE('24/11/2013' ,'dd/mm/yyyy'),'palestine',
+ 3 ,'f' ,'palestinian','Moslem',2098781 ,40 ,'butcher' , 'House wife',' null' , 'null','A+','A hardworking and distinguished student',2 ,2);
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'Mariam ahmed' ,'ahmed' ,'AbuArafat' ,'mohamed' ,fatherseq.nextval, 'father',TO_DATE('06/01/2014' ,'dd/mm/yyyy'),'palestine',
+ 7 ,'f' ,'palestinian','Moslem',2098581 ,50 ,'not worke' , 'House wife',' null' , 'null','AB+','Polite and energetic',2 ,2);
+ 
+ 
+         level(3/1)
+ 
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'Abeer adel' ,'yaseer' ,'Quader' ,'Jihad' ,fatherseq.nextval, 'father',TO_DATE('07/01/2013' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2058581 ,20 ,'driver' , 'House wife',' null' , 'null','O-','Polite and energetic',1 ,3);
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'Nisreen ahmed' ,'Sulaiman' ,'AbuAnza' ,'Sulaiman' ,fatherseq.nextval, 'father',TO_DATE('07/10/2012' ,'dd/mm/yyyy'),'palestine',
+ 7 ,'f' ,'palestinian','Moslem',2034951 ,20 ,'Baker' , 'House wife',' KhanYunis' , 'null','B+','A hardworking and distinguished student',1 ,3);
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'Yara Rafat' ,'adel' ,'adnan' ,'mohamed' ,fatherseq.nextval, 'father',TO_DATE('16/08/2012' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',2098681 ,10 ,'sceurty' , 'doctor',' mr_company' , 'aloropy_hospital','A+','An outstanding student',1 ,3);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'Tamam Fared' ,'Mahmoud' ,'Mahmoud' ,'Jihad' ,fatherseq.nextval, 'father',TO_DATE('14/12/2012' ,'dd/mm/yyyy'),'palestine',
+ 3 ,'f' ,'palestinian','Moslem',2063281 ,50 ,'Barkeep' , 'nurse',' alawda_school' , 'KhanYunis Clinic','AB+','abilities is weak',1 ,3);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'Fatema Ahmed' ,'Ahmed' ,'Abdallrhman' ,'mohamed' ,fatherseq.nextval, 'father',TO_DATE('13/06/2012' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',204562 ,30 ,'driver' , 'House wife',' null' , 'null','B+','Polite and energetic',1 ,3);
+ 
+   INSERT INTO Student VALUES (studentseq.nextval , 'Gadeer Mahmoud' ,'Rafat' ,'Abdallrhman' ,'mohamed' ,fatherseq.nextval, 'father',TO_DATE('10/06/2012' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',204561 ,40 ,'accountant' , 'House wife','null' , 'null','O+','There is no notes',1 ,3);
+ 
+         level(3/2)
+		 
+   INSERT INTO Student VALUES (studentseq.nextval , 'sara sameer' ,'sameer' ,'eshaq' ,'sameer' ,fatherseq.nextval, 'father',TO_DATE('17/07/2012' ,'dd/mm/yyyy'),'palestine',
+ 7 ,'f' ,'palestinian','Moslem',2032951 ,20 ,'Baker' , 'House wife',' KhanYunis' , 'null','AB-','A hardworking and distinguished student',2 ,3);
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'Yomna shaat' ,'adel' ,'adnan' ,'adel' ,fatherseq.nextval, 'father',TO_DATE('13/05/2012' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',2078681 ,10 ,'sceurty' , 'doctor',' mr_company' , 'aloropy_hospital','A+','An outstanding student',2 ,3);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'etaf hadda' ,'Mahmoud' ,'habeeb' ,'Mahmoud' ,fatherseq.nextval, 'father',TO_DATE('24/12/2012' ,'dd/mm/yyyy'),'palestine',
+ 3 ,'f' ,'palestinian','Moslem',2063291 ,50 ,'Barkeep' , 'nurse',' alawda_school' , 'KhanYunis Clinic','O+','abilities is weak',2 ,3);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'nour edrees' ,'edrees' ,'Abdallrhman' ,'edrees' ,fatherseq.nextval, 'father',TO_DATE('20/06/2012' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',204560 ,30 ,'driver' , 'House wife',' null' , 'null','B+','Polite and energetic',2 ,3);
+ 
+   INSERT INTO Student VALUES (studentseq.nextval , 'Gadeer zaher' ,'zaher' ,'zaher' ,'zaher' ,fatherseq.nextval, 'father',TO_DATE('15/06/2012' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',204551 ,40 ,'accountant' , 'House wife','null' , 'null','O-','There is no notes',2 ,3);
+ 		 
+		 
+		    level(4/1)
+		 
+   INSERT INTO Student VALUES (studentseq.nextval , 'ranad nael' ,'nael' ,'dahshan' ,'nael' ,fatherseq.nextval, 'father',TO_DATE('22/02/2011' ,'dd/mm/yyyy'),'palestine',
+ 7 ,'f' ,'palestinian','Moslem',2023951 ,20 ,'Baker' , 'House wife',' KhanYunis' , 'null','AB-','A hardworking and distinguished student',1 ,4);
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'ysra lafy' ,'lafy' ,'farahat' ,'lafy' ,fatherseq.nextval, 'father',TO_DATE('27/05/2011' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',2087681 ,10 ,'sceurty' , 'doctor',' mr_company' , 'aloropy_hospital','A+','An outstanding student',1 ,4);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'jomana senjar' ,'rasem' ,'senjar' ,'rasem' ,fatherseq.nextval, 'father',TO_DATE('28/11/2011' ,'dd/mm/yyyy'),'palestine',
+ 3 ,'f' ,'palestinian','Moslem',2063091 ,50 ,'Barkeep' , 'nurse',' alawda_school' , 'KhanYunis Clinic','O+','abilities is weak',1 ,4);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'wedad esmail' ,'esmail' ,'massry' ,'esmail' ,fatherseq.nextval, 'father',TO_DATE('19/02/2011' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',204210 ,30 ,'driver' , 'House wife',' null' , 'null','B+','Polite and energetic',1 ,4);
+ 
+   INSERT INTO Student VALUES (studentseq.nextval , 'habiba fayze' ,'fayze' ,'jazar' ,'fayze' ,fatherseq.nextval, 'father',TO_DATE('06/03/2011' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',204591 ,40 ,'accountant' , 'House wife','null' , 'null','O-','There is no notes',1 ,4);
+		 
+		 
+		   level(4/2)
+		 
+   INSERT INTO Student VALUES (studentseq.nextval , 'rawan mortaja' ,'ramy' ,'mortaja' ,'ramy' ,fatherseq.nextval, 'father',TO_DATE('22/07/2011' ,'dd/mm/yyyy'),'palestine',
+ 7 ,'f' ,'palestinian','Moslem',2023922 ,20 ,'Baker' , 'House wife',' KhanYunis' , 'null','AB+','A hardworking and distinguished student',2 ,4);
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'jana afifi' ,'ahmed' ,'afifi' ,'ahmed' ,fatherseq.nextval, 'father',TO_DATE('27/06/2011' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',2087633 ,10 ,'sceurty' , 'nurse',' mr_company' , 'aloropy_hospital','A+','An outstanding student',2 ,4);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'rajaa hasan' ,'hasan' ,'abu kaw' ,'hasan' ,fatherseq.nextval, 'father',TO_DATE('28/04/2011' ,'dd/mm/yyyy'),'palestine',
+ 3 ,'f' ,'palestinian','Moslem',2063044 ,50 ,'Barkeep' , 'dustman',' alawda_school' , 'KhanYunis Clinic','O+','abilities is weak',2 ,4);
+ 
+  INSERT INTO Student VALUES (studentseq.nextval , 'mawada esliah' ,'mohamed' ,'esliah' ,'mohamed' ,fatherseq.nextval, 'father',TO_DATE('19/03/2011' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',204255 ,30 ,'driver' , 'House wife',' null' , 'null','B-','Polite and energetic',2 ,4);
+ 
+           level(5/1)
+
+INSERT INTO Student VALUES (studentseq.nextval , 'sela alsalmy' ,'shady' ,'alsalmy' ,'shady' ,fatherseq.nextval, 'father',TO_DATE('09/09/2010' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2078923 ,30 ,'teacher' , 'eng','km_school' , 'ha_company','O+','A hardworking and distinguished student',1 ,5);
+ 
+
+ INSERT INTO Student VALUES (studentseq.nextval , 'jenan jaber' ,'jaber' ,'khodary' ,'jaber' ,fatherseq.nextval, 'father',TO_DATE('12/11/2010' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',20990723 ,10 ,'Baker' , 'Baker','Family bakery' , 'Family bakery','B+','There is no notes',1 ,5);
+
+INSERT INTO Student VALUES (studentseq.nextval , 'walaa ferwana' ,'talal' ,'ferwana' ,'talal' ,fatherseq.nextval, 'father',TO_DATE('20/01/2011' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2090923 ,20 ,'teacher' , 'teacher','km_school' , 'alawda_school','B-','There is no notes',1 ,5);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'yara atef' ,'atef' ,'abueshaq' ,'atef' ,fatherseq.nextval, 'father',TO_DATE('22/02/2010' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2078925 ,40 ,'Driver' , 'teacher','null' , 'alawqaf_school','A-','A hardworking and distinguished student',1 ,5);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'doaa khaled' ,'kaled' ,'tabash' ,'kaled' ,fatherseq.nextval, 'father',TO_DATE('05/08/2010' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2034512 ,20 ,'eng' , 'doctor','rr_company' , 'aloropy_hospital','A+','A middle level student',1 ,5);
+
+          level(5/2)
+
+INSERT INTO Student VALUES (studentseq.nextval , 'alma jarada' ,'belal' ,'jarada' ,'belal' ,fatherseq.nextval, 'father',TO_DATE('09/08/2010' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2068923 ,30 ,'teacher' , 'eng','km_school' , 'ha_company','O+','A hardworking and distinguished student',2 ,5);
+ 
+
+ INSERT INTO Student VALUES (studentseq.nextval , 'dana fouad' ,'fouad' ,'yaseen' ,'fouad' ,fatherseq.nextval, 'father',TO_DATE('21/11/2010' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',20690723 ,10 ,'Baker' , 'Baker','Family bakery' , 'Family bakery','B+','There is no notes',2 ,5);
+
+INSERT INTO Student VALUES (studentseq.nextval , 'malak hamdan' ,'basel' ,'hamdan' ,'basel' ,fatherseq.nextval, 'father',TO_DATE('22/06/2010' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2060923 ,20 ,'teacher' , 'teacher','km_school' , 'alawda_school','B-','There is no notes',2 ,5);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'beesan sharaf' ,'sharaf' ,'eslayeh' ,'sharaf' ,fatherseq.nextval, 'father',TO_DATE('23/02/2010' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2068925 ,40 ,'Driver' , 'teacher','null' , 'alawqaf_school','A-','A hardworking and distinguished student',2 ,5);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'asmaa nezam' ,'nezam' ,'shaat' ,'nezam' ,fatherseq.nextval, 'father',TO_DATE('24/08/2010' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2064512 ,20 ,'eng' , 'doctor','rr_company' , 'aloropy_hospital','A+','A middle level student',2 ,5); 
+ 
+         level(6/1)
+
+INSERT INTO Student VALUES (studentseq.nextval , 'tasneem jama' ,'shehda' ,'jama' ,'shehda' ,fatherseq.nextval, 'father',TO_DATE('09/08/2009' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2066923 ,30 ,'teacher' , 'eng','km_school' , 'ha_company','O+','A hardworking and distinguished student',1 ,6);
+ 
+
+ INSERT INTO Student VALUES (studentseq.nextval , 'raghad hamdy' ,'hamdy' ,'massry' ,'hamdy' ,fatherseq.nextval, 'father',TO_DATE('21/11/2009' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',20660723 ,10 ,'Baker' , 'Baker','Family bakery' , 'Family bakery','B+','There is no notes',1 ,6);
+
+INSERT INTO Student VALUES (studentseq.nextval , 'ola ammera' ,'ramzy' ,'ammera' ,'ramzy' ,fatherseq.nextval, 'father',TO_DATE('22/06/2009' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2066923 ,20 ,'teacher' , 'teacher','km_school' , 'alawda_school','B-','There is no notes',1 ,6);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'samar ghanem' ,'kh' ,'ghanem' ,'kh' ,fatherseq.nextval, 'father',TO_DATE('23/02/2009' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2066925 ,40 ,'Driver' , 'teacher','null' , 'alawqaf_school','A-','A hardworking and distinguished student',1 ,6);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'janat zebada' ,'marwan' ,'zebada' ,'marwan' ,fatherseq.nextval, 'father',TO_DATE('24/08/2009' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2066212 ,50 ,'eng' , 'doctor','rr_company' , 'aloropy_hospital','A+','A middle level student',1 ,6); 
+ 
+ INSERT INTO Student VALUES (studentseq.nextval , 'nema wesam' ,'wesam' ,'ma' ,'wesam' ,fatherseq.nextval, 'father',TO_DATE('24/08/2009' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2066512 ,50 ,'eng' , 'doctor','rr_company' , 'aloropy_hospital','A+','A middle level student',1 ,6); 
+ 
+  
+         level(6/2)
+
+INSERT INTO Student VALUES (studentseq.nextval , 'watan shorab' ,'haider' ,'shorab' ,'haider' ,fatherseq.nextval, 'father',TO_DATE('22/08/2009' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2066923 ,30 ,'teacher' , 'eng','km_school' , 'ha_company','O+','A hardworking and distinguished student',2 ,6);
+ 
+
+ INSERT INTO Student VALUES (studentseq.nextval , 'retal nassar' ,'zaher' ,'nassar' ,'zaher' ,fatherseq.nextval, 'father',TO_DATE('19/11/2009' ,'dd/mm/yyyy'),'palestine',
+ 8 ,'f' ,'palestinian','Moslem',20660723 ,10 ,'Baker' , 'Baker','Family bakery' , 'Family bakery','B+','There is no notes',2 ,6);
+
+INSERT INTO Student VALUES (studentseq.nextval , 'shymaa awny' ,'awny' ,'nassar' ,'awny' ,fatherseq.nextval, 'father',TO_DATE('18/06/2009' ,'dd/mm/yyyy'),'palestine',
+ 6 ,'f' ,'palestinian','Moslem',2066923 ,20 ,'teacher' , 'teacher','km_school' , 'alawda_school','B-','There is no notes',2 ,6);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'lames awadallah' ,'maher' ,'awadallah' ,'maher' ,fatherseq.nextval, 'father',TO_DATE('17/02/2009' ,'dd/mm/yyyy'),'palestine',
+ 4 ,'f' ,'palestinian','Moslem',2066925 ,40 ,'Driver' , 'teacher','null' , 'alawqaf_school','A-','A hardworking and distinguished student',2 ,6);
+ 
+ 
+INSERT INTO Student VALUES (studentseq.nextval , 'toqa jalal' ,'jalal' ,'amer' ,'jalal' ,fatherseq.nextval, 'father',TO_DATE('16/08/2009' ,'dd/mm/yyyy'),'palestine',
+ 5 ,'f' ,'palestinian','Moslem',2066212 ,50 ,'eng' , 'doctor','rr_company' , 'aloropy_hospital','A+','A middle level student',2 ,6); 
+ 
+ 
+ 
+ 
+ 
+ 
+           staff 
+	create sequence staffseq  increment by 1  start with 120  maxvalue 140;	   
+		   
+INSERT INTO staff values (staffseq.nextval,6060,'noha ahmad salama','salama','masri','10/10/1970','palistine','Palestinian','f','married','Muslim',28461256,059258963,6,'ss@123.com',28456987,28123547,'gaza','gaza','10/10/1998',22,'math',2000,40,'A+');
+
+INSERT INTO staff values (staffseq.nextval,5050,'seham ameer sehw','sehw','najar','20/5/1975','palistine','Palestinian','f','married','Muslim',2845127,056789521,4,'oo@124.com',28420207,28508047,'gaza','gaza','20/10/2000',20,'math',1800,20,'A+');
+
+INSERT INTO staff values (staffseq.nextval,4040,'ameera jamal asli','asli','hamada','10/5/1980','palistine','Palestinian','f','married','Muslim',287070,059280703,4,'aa@123.com',2843087,2870547,'gaza','gaza','10/10/2005',15,'Business Admin',1500,30,'o+');
+
+INSERT INTO staff values (staffseq.nextval,3030,'soha jam alnono','alnono','najar','20/5/1970','palistine','Palestinian','f','married','Muslim',2875127,0568529521,7,'bb@124.com',28430207,28579047,'gaza','gaza','20/10/1990',10,'history',1800,30,'b+');
+
+INSERT INTO staff values (staffseq.nextval,3030,'sohila ismail khaleel','khaleel','mahdi','10/2/1980','palistine','Palestinian','f','married','Muslim',2875127,0568429521,10,'cc@125.com',2847807,282145047,'gaza','gaza','20/10/1990',20,'arabic',1800,40,'a+');
+
+INSERT INTO staff values (staffseq.nextval,3030,'rola ahmad kaloub','kaloub','asem','20/3/1992','palistine','Palestinian','f','married','Muslim',282201075,05985297211,7,'rr@154.com',28434281,28574827,'gaza','gaza','20/8/2010',10,'Science',1800,10,'o-');
+INSERT INTO staff values (staffseq.nextval,3030,'nael ahmad kaloub','kaloub','zeyad','10/4/1992','palistine','Palestinian','m','married','Muslim',282201451,05648797211,7,'mm@154.com',28445281,2857477,'gaza','gaza','20/8/2010',10,'english',1800,10,'o+');
+
+INSERT INTO staff values (staffseq.nextval,3030,'etaf ahmad ghoul','ghoul','redwan','23/4/1990','palistine','Palestinian','f','married','Muslim',282201054,05649034211,10,'ee@144.com',2843781,28542714,'gaza','gaza','23/7/2009',11,'english',1800,20,'a+');
+INSERT INTO staff values (staffseq.nextval,3030,'eman ahmad aldaya','aldaya','matar','20/4/1980','palistine','Palestinian','f','married','Muslim',28201300,05649157201,10,'qq@1175.com',28445781,28543450,'gaza','gaza','23/7/2012',8,'arabic',1500,30,'b+');
+INSERT INTO staff values (staffseq.nextval,3030,'seham ahmad madhoun','madhoun','henawie','20/4/1985','palistine','Palestinian','f','married','Muslim',28222200,05642020351,4,'hh@1178.com',28954781,28575250,'gaza','gaza','23/5/2015',5,'technology',2500,10,'a+');
+INSERT INTO staff values (staffseq.nextval,3030,'osama ali radwan','radwan','hamada','25/10/1975','palistine','Palestinian','m','married','Muslim',28741369,056452761,4,'sam@1148.com',28107850,28398742,'gaza','gaza','23/5/2001',19,'Science',2500,30,'b-');
+INSERT INTO staff values (staffseq.nextval,3030,'sahar osama madhoun','madhoun','oman','12/6/1975','palistine','Palestinian','f','married','Muslim',28795412,056459161,5,'bvc@1248.com',28005412,28457123,'gaza','gaza','23/5/2000',20,'arabic',2500,20,'b+');
+
+INSERT INTO staff values (staffseq.nextval,3030,'taiem jamal kaloub','kaloub','harb','2/12/1992','palistine','Palestinian','m','married','Muslim',282789451,05648452211,7,'sdf@122.com',28445741,2850177,'gaza','gaza','20/8/2010',10,'english',1800,10,'o-');
+INSERT INTO staff values (staffseq.nextval,3030,'ranad ayman abuzaid','abuzaid','esam','30/4/1990','palistine','Palestinian','f','married','Muslim',28278955,05985252211,5,'mdaf@122.com',28444561,28444770,'gaza','gaza','2/4/2009',11,'Science',1800,10,'a-');
+INSERT INTO staff values (staffseq.nextval,3030,'waleed ali hani','hani','dalou','22/4/1980','palistine','Palestinian','m','married','Muslim',28999955,0598182211,9,'uio@122.com',28999561,28446660,'gaza','gaza','2/4/2000',20,'history',2000,50,'b-');
+INSERT INTO staff values (staffseq.nextval,3030,'saied ali atrash','atrash','daloul','12/3/1985','palistine','Palestinian','m','married','Muslim',28997515,0598187431,8,'uio@122.com',28912961,28485260,'gaza','gaza','2/4/2005',15,'Islamic Education',2000,50,'b-');
+INSERT INTO staff values (staffseq.nextval,3030,'etaf ali hazem','hazem','masri','12/3/1975','palistine','Palestinian','f','married','Muslim',28991285,0598632431,8,'wec@1472.com',28717961,28448460,'gaza','gaza','18/1/2000',20,'Islamic Education',2000,50,'a-');
+INSERT INTO staff values (staffseq.nextval,2020,'haya ali ghannam','ghannam','masri','13/5/1975','palistine','Palestinian','f','married','Muslim',28285285,0598615981,8,'ewq@1472.com',28741821,28654160,'gaza','gaza','18/1/2000',20,'psychology',2000,50,'b-');
+INSERT INTO staff values (staffseq.nextval,1010,'kamal ali abuamer','abuamer','ghannam','20/6/1975','palistine','Palestinian','m','married','Muslim',28285423,0597852981,8,'cvb@1472.com',28412821,28654177,'gaza','gaza','20/3/2000',20,'security man',1000,10,'b-');
+INSERT INTO staff values (staffseq.nextval,1010,'amr ali mortaja','mortaja','atrash','20/6/1980','palistine','Palestinian','m','married','Muslim',28758413,05974123881,11,'nhg@1472.com',28417416,28104177,'gaza','gaza','20/3/1999',21,'security man',1000,10,'b-');
+ 
+ 
+      teacher
+	create sequence teacherseq  increment by 1  start with 120  maxvalue 133;  
+INSERT INTO teacher values (teacherseq.nextval,'23/4/2022' , 'math');
+INSERT INTO teacher values (teacherseq.nextval,'22/5/2024' , 'arabic');	
+INSERT INTO teacher values (teacherseq.nextval,'21/6/2022' , 'english');	
+INSERT INTO teacher values (teacherseq.nextval,'19/1/2023' , 'math');	
+INSERT INTO teacher values (teacherseq.nextval,'18/2/2026' , 'arabic');	
+INSERT INTO teacher values (teacherseq.nextval,'16/3/2025' , 'Science');	
+INSERT INTO teacher values (teacherseq.nextval,'17/7/2024' , 'english');	
+INSERT INTO teacher values (teacherseq.nextval,'13/8/2023' , 'technology');	
+INSERT INTO teacher values (teacherseq.nextval,'03/9/2030' , 'Islamic Education');	
+INSERT INTO teacher values (teacherseq.nextval,'06/10/2028' , 'social patriotism');	
+INSERT INTO teacher values (teacherseq.nextval,'12/4/2023' , 'Islamic Education');	
+INSERT INTO teacher values (teacherseq.nextval,'04/11/2027' , 'technology');	
+INSERT INTO teacher values (teacherseq.nextval,'25/12/2031' , 'Science');	
+
+            ScoreRecord (select Student_ID from  Student where Division_id=2 and level_id=1;)
+INSERT INTO ScoreRecord values (120,11,120,10,29,10,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (120,12,121,10,28,10,49,97,'01/09/2020');
+INSERT INTO ScoreRecord values (120,13,122,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (120,14,125,10,30,9,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (120,15,127,9,29,10,50,98,'01/09/2020');
+INSERT INTO ScoreRecord values (120,16,128,10,30,10,49,99,'01/09/2020');
+INSERT INTO ScoreRecord values (120,17,129,10,29,10,45,94,'01/09/2020');
+
+INSERT INTO ScoreRecord values (140,11,120,10,29,10,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (140,12,121,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (140,13,122,10,29,10,45,94,'01/09/2020');
+INSERT INTO ScoreRecord values (140,14,125,10,28,10,50,98,'01/09/2020');
+INSERT INTO ScoreRecord values (140,15,127,10,29,10,50,99,'01/09/2020');		
+INSERT INTO ScoreRecord values (140,16,128,10,30,9,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (140,17,129,8,29,9,40,86,'01/09/2020');
+
+INSERT INTO ScoreRecord values (220,11,120,10,24,10,50,94,'01/09/2020');
+INSERT INTO ScoreRecord values (220,12,121,9,28,10,49,96,'01/09/2020');
+INSERT INTO ScoreRecord values (220,13,122,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (220,14,125,8,30,8,50,96,'01/09/2020');
+INSERT INTO ScoreRecord values (220,15,127,5,29,10,50,94,'01/09/2020');
+INSERT INTO ScoreRecord values (220,16,128,10,30,10,49,99,'01/09/2020');
+INSERT INTO ScoreRecord values (220,17,129,10,26,10,45,89,'01/09/2020');
+
+INSERT INTO ScoreRecord values (240,11,120,10,26,10,45,89,'01/09/2020');
+INSERT INTO ScoreRecord values (240,12,121,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (240,13,122,10,29,10,45,94,'01/09/2020');
+INSERT INTO ScoreRecord values (240,14,125,10,28,10,50,98,'01/09/2020');
+INSERT INTO ScoreRecord values (240,15,127,9,29,7,50,95,'01/09/2020');		
+INSERT INTO ScoreRecord values (240,16,128,10,30,9,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (240,17,129,8,29,9,40,86,'01/09/2020');
+
+INSERT INTO ScoreRecord values (340,11,120,10,25,5,40,80,'01/09/2020');
+INSERT INTO ScoreRecord values (340,12,121,10,18,10,49,87,'01/09/2020');
+INSERT INTO ScoreRecord values (340,13,122,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (340,14,125,10,30,9,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (340,15,127,9,29,10,40,88,'01/09/2020');
+INSERT INTO ScoreRecord values (340,16,128,10,25,10,45,90,'01/09/2020');
+INSERT INTO ScoreRecord values (340,17,129,10,29,10,45,94,'01/09/2020');
+
+INSERT INTO ScoreRecord values (360,11,120,10,29,10,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (360,12,121,9,29,8,50,96,'01/09/2020');
+INSERT INTO ScoreRecord values (360,13,122,10,27,10,45,92,'01/09/2020');
+INSERT INTO ScoreRecord values (360,14,125,10,28,5,50,93,'01/09/2020');
+INSERT INTO ScoreRecord values (360,15,127,10,25,10,45,90,'01/09/2020');		
+INSERT INTO ScoreRecord values (360,16,128,10,26,9,49,94,'01/09/2020');
+INSERT INTO ScoreRecord values (360,17,129,8,29,9,40,86,'01/09/2020');
+
+INSERT INTO ScoreRecord values (460,11,120,10,24,10,50,94,'01/09/2020');
+INSERT INTO ScoreRecord values (460,12,121,9,28,10,49,96,'01/09/2020');
+INSERT INTO ScoreRecord values (460,13,122,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (460,14,125,8,30,8,50,96,'01/09/2020');
+INSERT INTO ScoreRecord values (460,15,127,5,29,10,50,94,'01/09/2020');
+INSERT INTO ScoreRecord values (460,16,128,10,30,10,49,99,'01/09/2020');
+INSERT INTO ScoreRecord values (460,17,129,10,26,10,45,89,'01/09/2020');
+
+INSERT INTO ScoreRecord values (480,11,120,10,26,10,45,89,'01/09/2020');
+INSERT INTO ScoreRecord values (480,12,121,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (480,13,122,10,29,10,45,94,'01/09/2020');
+INSERT INTO ScoreRecord values (480,14,125,10,28,10,50,98,'01/09/2020');
+INSERT INTO ScoreRecord values (480,15,127,9,29,7,50,95,'01/09/2020');		
+INSERT INTO ScoreRecord values (480,16,128,10,30,9,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (480,17,129,8,29,9,40,86,'01/09/2020');
+
+
+INSERT INTO ScoreRecord values (580,11,120,10,14,3,21,48,'01/09/2020');
+INSERT INTO ScoreRecord values (580,12,121,5,8,5,46,64,'01/09/2020');
+INSERT INTO ScoreRecord values (580,13,122,8,16,1,44,69,'01/09/2020');
+INSERT INTO ScoreRecord values (580,14,125,5,13,3,36,57,'01/09/2020');
+INSERT INTO ScoreRecord values (580,15,127,9,1,1,46,57,'01/09/2020');
+INSERT INTO ScoreRecord values (580,16,128,8,18,2,39,77,'01/09/2020');
+INSERT INTO ScoreRecord values (580,17,129,9,24,2,26,61,'01/09/2020');
+
+INSERT INTO ScoreRecord values (600,11,120,6,20,8,42,76,'01/09/2020');
+INSERT INTO ScoreRecord values (600,12,121,10,19,3,43,75,'01/09/2020');
+INSERT INTO ScoreRecord values (600,13,122,10,14,6,35,65,'01/09/2020');
+INSERT INTO ScoreRecord values (600,14,125,2,26,6,43,87,'01/09/2020');
+INSERT INTO ScoreRecord values (600,15,127,8,30,8,42,88,'01/09/2020');		
+INSERT INTO ScoreRecord values (600,16,128,8,18,2,39,77,'01/09/2020');
+INSERT INTO ScoreRecord values (600,17,129,8,29,9,40,86,'01/09/2020');
+
+INSERT INTO ScoreRecord values (660,11,120,10,30,10,42,92,'01/09/2020');
+INSERT INTO ScoreRecord values (660,12,121,9,30,10,39,88,'01/09/2020');
+INSERT INTO ScoreRecord values (660,13,122,6,14,10,44,74,'01/09/2020');
+INSERT INTO ScoreRecord values (660,14,125,5,23,8,43,79,'01/09/2020');
+INSERT INTO ScoreRecord values (660,15,127,8,29,3,48,88,'01/09/2020');
+INSERT INTO ScoreRecord values (660,16,128,8,14,7,21,50,'01/09/2020');
+INSERT INTO ScoreRecord values (660,17,129,8,28,9,47,92,'01/09/2020');
+
+INSERT INTO ScoreRecord values (700,11,120,10,24,10,42,86,'01/09/2020');
+INSERT INTO ScoreRecord values (700,12,121,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (700,13,122,10,29,10,45,94,'01/09/2020');
+INSERT INTO ScoreRecord values (700,14,125,11,24,5,48,88,'01/09/2020');
+INSERT INTO ScoreRecord values (700,15,127,9,29,7,50,95,'01/09/2020');		
+INSERT INTO ScoreRecord values (700,16,128,10,30,9,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (700,17,129,8,29,9,40,86,'01/09/2020');
+
+
+INSERT INTO ScoreRecord values (740,11,123,10,24,10,42,86,'01/09/2020');
+INSERT INTO ScoreRecord values (740,12,124,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (740,13,126,10,29,10,45,94,'01/09/2020');
+INSERT INTO ScoreRecord values (740,14,132,11,24,5,48,88,'01/09/2020');
+INSERT INTO ScoreRecord values (740,15,131,9,29,7,50,95,'01/09/2020');		
+INSERT INTO ScoreRecord values (740,16,130,10,30,9,50,99,'01/09/2020');
+INSERT INTO ScoreRecord values (740,17,129,8,29,9,40,86,'01/09/2020');
+
+INSERT INTO ScoreRecord values (760,11,123,10,30,10,42,92,'01/09/2020');
+INSERT INTO ScoreRecord values (760,12,124,9,29,7,50,95,'01/09/2020');
+INSERT INTO ScoreRecord values (760,13,126,5,23,8,43,79,'01/09/2020');
+INSERT INTO ScoreRecord values (760,14,132,11,24,5,48,88,'01/09/2020');
+INSERT INTO ScoreRecord values (760,15,131,9,29,7,50,95,'01/09/2020');		
+INSERT INTO ScoreRecord values (760,16,130,8,14,7,21,50,'01/09/2020');
+INSERT INTO ScoreRecord values (760,17,129,8,29,9,40,86,'01/09/2020');
+
+
+
+
+
+
+
+                Attendance
+INSERT INTO Attendance values (120,'yes', '01/09/2020');
+INSERT INTO Attendance values (140,'yes', '01/09/2020');
+INSERT INTO Attendance values (160,'yes', '01/09/2020');
+INSERT INTO Attendance values (180,'no', '01/09/2020');
+INSERT INTO Attendance values (200,'yes', '01/09/2020');
+INSERT INTO Attendance values (220,'yes', '01/09/2020');
+INSERT INTO Attendance values (240,'yes', '01/09/2020');
+INSERT INTO Attendance values (260,'yes', '01/09/2020');
+INSERT INTO Attendance values (280,'yes', '01/09/2020');
+INSERT INTO Attendance values (300,'yes', '01/09/2020');
+INSERT INTO Attendance values (320,'yes', '01/09/2020');
+INSERT INTO Attendance values (340,'yes', '01/09/2020');
+INSERT INTO Attendance values (360,'yes', '01/09/2020');
+INSERT INTO Attendance values (380,'yes', '01/09/2020');
+INSERT INTO Attendance values (400,'yes', '01/09/2020');
+INSERT INTO Attendance values (420,'yes', '01/09/2020');
+INSERT INTO Attendance values (440,'yes', '01/09/2020');
+INSERT INTO Attendance values (460,'no', '01/09/2020');
+INSERT INTO Attendance values (480,'yes', '01/09/2020');
+INSERT INTO Attendance values (500,'yes', '01/09/2020');
+INSERT INTO Attendance values (520,'yes', '01/09/2020');
+INSERT INTO Attendance values (540,'yes', '01/09/2020');
+INSERT INTO Attendance values (560,'yes', '01/09/2020');
+INSERT INTO Attendance values (580,'yes', '01/09/2020');
+INSERT INTO Attendance values (600,'yes', '01/09/2020');
+INSERT INTO Attendance values (620,'yes', '01/09/2020');
+INSERT INTO Attendance values (640,'yes', '01/09/2020');
+INSERT INTO Attendance values (660,'yes', '01/09/2020');
+INSERT INTO Attendance values (700,'yes', '01/09/2020');
+INSERT INTO Attendance values (720,'yes', '01/09/2020');
+INSERT INTO Attendance values (740,'yes', '01/09/2020');
+INSERT INTO Attendance values (760,'yes', '01/09/2020');
+INSERT INTO Attendance values (780,'yes', '01/09/2020');
+INSERT INTO Attendance values (820,'yes', '01/09/2020');
+INSERT INTO Attendance values (840,'yes', '01/09/2020');
+INSERT INTO Attendance values (860,'yes', '01/09/2020');
+INSERT INTO Attendance values (880,'yes', '01/09/2020');
+INSERT INTO Attendance values (900,'yes', '01/09/2020');
+INSERT INTO Attendance values (920,'yes', '01/09/2020');
+INSERT INTO Attendance values (940,'yes', '01/09/2020');
+INSERT INTO Attendance values (960,'yes', '01/09/2020');
+INSERT INTO Attendance values (980,'yes', '01/09/2020');
+INSERT INTO Attendance values (1000,'no', '01/09/2020');
+INSERT INTO Attendance values (1020,'yes', '01/09/2020');
+INSERT INTO Attendance values (1040,'yes', '01/09/2020');
+INSERT INTO Attendance values (1060,'yes', '01/09/2020');
+INSERT INTO Attendance values (1080,'yes', '01/09/2020');
+INSERT INTO Attendance values (1100,'yes', '01/09/2020');
+INSERT INTO Attendance values (1120,'yes', '01/09/2020');
+INSERT INTO Attendance values (1140,'yes', '01/09/2020');
+INSERT INTO Attendance values (1160,'yes', '01/09/2020');
+INSERT INTO Attendance values (1180,'yes', '01/09/2020');
+INSERT INTO Attendance values (1200,'yes', '01/09/2020');
+INSERT INTO Attendance values (1220,'yes', '01/09/2020');
+INSERT INTO Attendance values (1240,'yes', '01/09/2020');
+INSERT INTO Attendance values (1260,'yes', '01/09/2020');
+INSERT INTO Attendance values (1280,'yes', '01/09/2020');
+INSERT INTO Attendance values (1300,'yes', '01/09/2020');
+INSERT INTO Attendance values (1320,'yes', '01/09/2020');
+INSERT INTO Attendance values (1340,'no', '01/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '02/09/2020');
+INSERT INTO Attendance values (140,'yes', '02/09/2020');
+INSERT INTO Attendance values (160,'no', '02/09/2020');
+INSERT INTO Attendance values (180,'yes', '02/09/2020');
+INSERT INTO Attendance values (200,'yes', '02/09/2020');
+INSERT INTO Attendance values (220,'yes', '02/09/2020');
+INSERT INTO Attendance values (240,'yes', '02/09/2020');
+INSERT INTO Attendance values (260,'yes', '02/09/2020');
+INSERT INTO Attendance values (280,'yes', '02/09/2020');
+INSERT INTO Attendance values (300,'no', '02/09/2020');
+INSERT INTO Attendance values (320,'yes', '02/09/2020');
+INSERT INTO Attendance values (340,'yes', '02/09/2020');
+INSERT INTO Attendance values (360,'yes', '02/09/2020');
+INSERT INTO Attendance values (380,'yes', '02/09/2020');
+INSERT INTO Attendance values (400,'yes', '02/09/2020');
+INSERT INTO Attendance values (420,'yes', '02/09/2020');
+INSERT INTO Attendance values (440,'yes', '02/09/2020');
+INSERT INTO Attendance values (460,'yes', '02/09/2020');
+INSERT INTO Attendance values (480,'yes', '02/09/2020');
+INSERT INTO Attendance values (500,'yes', '02/09/2020');
+INSERT INTO Attendance values (520,'yes', '02/09/2020');
+INSERT INTO Attendance values (540,'yes', '02/09/2020');
+INSERT INTO Attendance values (560,'yes', '02/09/2020');
+INSERT INTO Attendance values (580,'yes', '02/09/2020');
+INSERT INTO Attendance values (600,'yes', '02/09/2020');
+INSERT INTO Attendance values (620,'yes', '02/09/2020');
+INSERT INTO Attendance values (640,'yes', '02/09/2020');
+INSERT INTO Attendance values (660,'yes', '02/09/2020');
+INSERT INTO Attendance values (700,'yes', '02/09/2020');
+INSERT INTO Attendance values (720,'no', '02/09/2020');
+INSERT INTO Attendance values (740,'yes', '02/09/2020');
+INSERT INTO Attendance values (760,'yes', '02/09/2020');
+INSERT INTO Attendance values (780,'yes', '02/09/2020');
+INSERT INTO Attendance values (820,'yes', '02/09/2020');
+INSERT INTO Attendance values (840,'yes', '02/09/2020');
+INSERT INTO Attendance values (860,'yes', '02/09/2020');
+INSERT INTO Attendance values (880,'yes', '02/09/2020');
+INSERT INTO Attendance values (900,'yes', '02/09/2020');
+INSERT INTO Attendance values (920,'yes', '02/09/2020');
+INSERT INTO Attendance values (940,'yes', '02/09/2020');
+INSERT INTO Attendance values (960,'yes', '02/09/2020');
+INSERT INTO Attendance values (980,'yes', '02/09/2020');
+INSERT INTO Attendance values (1000,'yes', '02/09/2020');
+INSERT INTO Attendance values (1020,'yes', '02/09/2020');
+INSERT INTO Attendance values (1040,'yes', '02/09/2020');
+INSERT INTO Attendance values (1060,'yes', '02/09/2020');
+INSERT INTO Attendance values (1080,'yes', '02/09/2020');
+INSERT INTO Attendance values (1100,'yes', '02/09/2020');
+INSERT INTO Attendance values (1120,'yes', '02/09/2020');
+INSERT INTO Attendance values (1140,'yes', '02/09/2020');
+INSERT INTO Attendance values (1160,'yes', '02/09/2020');
+INSERT INTO Attendance values (1180,'yes', '02/09/2020');
+INSERT INTO Attendance values (1200,'yes', '02/09/2020');
+INSERT INTO Attendance values (1220,'yes', '02/09/2020');
+INSERT INTO Attendance values (1240,'yes', '02/09/2020');
+INSERT INTO Attendance values (1260,'yes', '02/09/2020');
+INSERT INTO Attendance values (1280,'yes', '02/09/2020');
+INSERT INTO Attendance values (1300,'no', '02/09/2020');
+INSERT INTO Attendance values (1320,'yes', '02/09/2020');
+INSERT INTO Attendance values (1340,'yes', '02/09/2020');
+
+INSERT INTO Attendance values (120,'no', '03/09/2020');
+INSERT INTO Attendance values (140,'yes', '03/09/2020');
+INSERT INTO Attendance values (160,'yes', '03/09/2020');
+INSERT INTO Attendance values (180,'yes', '03/09/2020');
+INSERT INTO Attendance values (200,'yes', '03/09/2020');
+INSERT INTO Attendance values (220,'yes', '03/09/2020');
+INSERT INTO Attendance values (240,'yes', '03/09/2020');
+INSERT INTO Attendance values (260,'yes', '03/09/2020');
+INSERT INTO Attendance values (280,'yes', '03/09/2020');
+INSERT INTO Attendance values (300,'yes', '03/09/2020');
+INSERT INTO Attendance values (320,'yes', '03/09/2020');
+INSERT INTO Attendance values (340,'yes', '03/09/2020');
+INSERT INTO Attendance values (360,'yes', '03/09/2020');
+INSERT INTO Attendance values (380,'yes', '03/09/2020');
+INSERT INTO Attendance values (400,'yes', '03/09/2020');
+INSERT INTO Attendance values (420,'yes', '03/09/2020');
+INSERT INTO Attendance values (440,'yes', '03/09/2020');
+INSERT INTO Attendance values (460,'yes', '03/09/2020');
+INSERT INTO Attendance values (480,'yes', '03/09/2020');
+INSERT INTO Attendance values (500,'yes', '03/09/2020');
+INSERT INTO Attendance values (520,'yes', '03/09/2020');
+INSERT INTO Attendance values (540,'yes', '03/09/2020');
+INSERT INTO Attendance values (560,'yes', '03/09/2020');
+INSERT INTO Attendance values (580,'yes', '03/09/2020');
+INSERT INTO Attendance values (600,'yes', '03/09/2020');
+INSERT INTO Attendance values (620,'yes', '03/09/2020');
+INSERT INTO Attendance values (640,'yes', '03/09/2020');
+INSERT INTO Attendance values (660,'yes', '03/09/2020');
+INSERT INTO Attendance values (700,'yes', '03/09/2020');
+INSERT INTO Attendance values (720,'yes', '03/09/2020');
+INSERT INTO Attendance values (740,'yes', '03/09/2020');
+INSERT INTO Attendance values (760,'yes', '03/09/2020');
+INSERT INTO Attendance values (780,'no', '03/09/2020');
+INSERT INTO Attendance values (820,'yes', '03/09/2020');
+INSERT INTO Attendance values (840,'yes', '03/09/2020');
+INSERT INTO Attendance values (860,'yes', '03/09/2020');
+INSERT INTO Attendance values (880,'yes', '03/09/2020');
+INSERT INTO Attendance values (900,'no', '03/09/2020');
+INSERT INTO Attendance values (920,'yes', '03/09/2020');
+INSERT INTO Attendance values (940,'yes', '03/09/2020');
+INSERT INTO Attendance values (960,'yes', '03/09/2020');
+INSERT INTO Attendance values (980,'yes', '03/09/2020');
+INSERT INTO Attendance values (1000,'yes', '03/09/2020');
+INSERT INTO Attendance values (1020,'no', '03/09/2020');
+INSERT INTO Attendance values (1040,'yes', '03/09/2020');
+INSERT INTO Attendance values (1060,'yes', '03/09/2020');
+INSERT INTO Attendance values (1080,'yes', '03/09/2020');
+INSERT INTO Attendance values (1100,'yes', '03/09/2020');
+INSERT INTO Attendance values (1120,'yes', '03/09/2020');
+INSERT INTO Attendance values (1140,'yes', '03/09/2020');
+INSERT INTO Attendance values (1160,'no', '03/09/2020');
+INSERT INTO Attendance values (1180,'yes', '03/09/2020');
+INSERT INTO Attendance values (1200,'yes', '03/09/2020');
+INSERT INTO Attendance values (1220,'yes', '03/09/2020');
+INSERT INTO Attendance values (1240,'yes', '03/09/2020');
+INSERT INTO Attendance values (1260,'yes', '03/09/2020');
+INSERT INTO Attendance values (1280,'yes', '03/09/2020');
+INSERT INTO Attendance values (1300,'yes', '03/09/2020');
+INSERT INTO Attendance values (1320,'yes', '03/09/2020');
+INSERT INTO Attendance values (1340,'yes', '03/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '04/09/2020');
+INSERT INTO Attendance values (140,'yes', '04/09/2020');
+INSERT INTO Attendance values (160,'yes', '04/09/2020');
+INSERT INTO Attendance values (180,'yes', '04/09/2020');
+INSERT INTO Attendance values (200,'no', '04/09/2020');
+INSERT INTO Attendance values (220,'yes', '04/09/2020');
+INSERT INTO Attendance values (240,'yes', '04/09/2020');
+INSERT INTO Attendance values (260,'yes', '04/09/2020');
+INSERT INTO Attendance values (280,'yes', '04/09/2020');
+INSERT INTO Attendance values (300,'no', '04/09/2020');
+INSERT INTO Attendance values (320,'yes', '04/09/2020');
+INSERT INTO Attendance values (340,'yes', '04/09/2020');
+INSERT INTO Attendance values (360,'yes', '04/09/2020');
+INSERT INTO Attendance values (380,'yes', '04/09/2020');
+INSERT INTO Attendance values (400,'yes', '04/09/2020');
+INSERT INTO Attendance values (420,'yes', '04/09/2020');
+INSERT INTO Attendance values (440,'yes', '04/09/2020');
+INSERT INTO Attendance values (460,'yes', '04/09/2020');
+INSERT INTO Attendance values (480,'yes', '04/09/2020');
+INSERT INTO Attendance values (500,'no', '04/09/2020');
+INSERT INTO Attendance values (520,'yes', '04/09/2020');
+INSERT INTO Attendance values (540,'yes', '04/09/2020');
+INSERT INTO Attendance values (560,'yes', '04/09/2020');
+INSERT INTO Attendance values (580,'yes', '04/09/2020');
+INSERT INTO Attendance values (600,'yes', '04/09/2020');
+INSERT INTO Attendance values (620,'yes', '04/09/2020');
+INSERT INTO Attendance values (640,'yes', '04/09/2020');
+INSERT INTO Attendance values (660,'yes', '04/09/2020');
+INSERT INTO Attendance values (700,'no', '04/09/2020');
+INSERT INTO Attendance values (720,'yes', '04/09/2020');
+INSERT INTO Attendance values (740,'yes', '04/09/2020');
+INSERT INTO Attendance values (760,'yes', '04/09/2020');
+INSERT INTO Attendance values (780,'yes', '04/09/2020');
+INSERT INTO Attendance values (820,'yes', '04/09/2020');
+INSERT INTO Attendance values (840,'yes', '04/09/2020');
+INSERT INTO Attendance values (860,'yes', '04/09/2020');
+INSERT INTO Attendance values (880,'yes', '04/09/2020');
+INSERT INTO Attendance values (900,'yes', '04/09/2020');
+INSERT INTO Attendance values (920,'yes', '04/09/2020');
+INSERT INTO Attendance values (940,'yes', '04/09/2020');
+INSERT INTO Attendance values (960,'yes', '04/09/2020');
+INSERT INTO Attendance values (980,'yes', '04/09/2020');
+INSERT INTO Attendance values (1000,'yes', '04/09/2020');
+INSERT INTO Attendance values (1020,'yes', '04/09/2020');
+INSERT INTO Attendance values (1040,'yes', '04/09/2020');
+INSERT INTO Attendance values (1060,'yes', '04/09/2020');
+INSERT INTO Attendance values (1080,'yes', '04/09/2020');
+INSERT INTO Attendance values (1100,'yes', '04/09/2020');
+INSERT INTO Attendance values (1120,'yes', '04/09/2020');
+INSERT INTO Attendance values (1140,'yes', '04/09/2020');
+INSERT INTO Attendance values (1160,'yes', '04/09/2020');
+INSERT INTO Attendance values (1180,'yes', '04/09/2020');
+INSERT INTO Attendance values (1200,'yes', '04/09/2020');
+INSERT INTO Attendance values (1220,'yes', '04/09/2020');
+INSERT INTO Attendance values (1240,'yes', '04/09/2020');
+INSERT INTO Attendance values (1260,'yes', '04/09/2020');
+INSERT INTO Attendance values (1280,'yes', '04/09/2020');
+INSERT INTO Attendance values (1300,'yes', '04/09/2020');
+INSERT INTO Attendance values (1320,'yes', '04/09/2020');
+INSERT INTO Attendance values (1340,'yes', '04/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '05/09/2020');
+INSERT INTO Attendance values (140,'yes', '05/09/2020');
+INSERT INTO Attendance values (160,'yes', '05/09/2020');
+INSERT INTO Attendance values (180,'yes', '05/09/2020');
+INSERT INTO Attendance values (200,'yes', '05/09/2020');
+INSERT INTO Attendance values (220,'yes', '05/09/2020');
+INSERT INTO Attendance values (240,'yes', '05/09/2020');
+INSERT INTO Attendance values (260,'yes', '05/09/2020');
+INSERT INTO Attendance values (280,'yes', '05/09/2020');
+INSERT INTO Attendance values (300,'yes', '05/09/2020');
+INSERT INTO Attendance values (320,'yes', '05/09/2020');
+INSERT INTO Attendance values (340,'yes', '05/09/2020');
+INSERT INTO Attendance values (360,'yes', '05/09/2020');
+INSERT INTO Attendance values (380,'yes', '05/09/2020');
+INSERT INTO Attendance values (400,'yes', '05/09/2020');
+INSERT INTO Attendance values (420,'yes', '05/09/2020');
+INSERT INTO Attendance values (440,'yes', '05/09/2020');
+INSERT INTO Attendance values (460,'yes', '05/09/2020');
+INSERT INTO Attendance values (480,'yes', '05/09/2020');
+INSERT INTO Attendance values (500,'yes', '05/09/2020');
+INSERT INTO Attendance values (520,'yes', '05/09/2020');
+INSERT INTO Attendance values (540,'yes', '05/09/2020');
+INSERT INTO Attendance values (560,'yes', '05/09/2020');
+INSERT INTO Attendance values (580,'yes', '05/09/2020');
+INSERT INTO Attendance values (600,'no', '05/09/2020');
+INSERT INTO Attendance values (620,'yes', '05/09/2020');
+INSERT INTO Attendance values (640,'yes', '05/09/2020');
+INSERT INTO Attendance values (660,'yes', '05/09/2020');
+INSERT INTO Attendance values (700,'yes', '05/09/2020');
+INSERT INTO Attendance values (720,'yes', '05/09/2020');
+INSERT INTO Attendance values (740,'yes', '05/09/2020');
+INSERT INTO Attendance values (760,'yes', '05/09/2020');
+INSERT INTO Attendance values (780,'yes', '05/09/2020');
+INSERT INTO Attendance values (820,'yes', '05/09/2020');
+INSERT INTO Attendance values (840,'yes', '05/09/2020');
+INSERT INTO Attendance values (860,'yes', '05/09/2020');
+INSERT INTO Attendance values (880,'yes', '05/09/2020');
+INSERT INTO Attendance values (900,'no', '05/09/2020');
+INSERT INTO Attendance values (920,'yes', '05/09/2020');
+INSERT INTO Attendance values (940,'yes', '05/09/2020');
+INSERT INTO Attendance values (960,'yes', '05/09/2020');
+INSERT INTO Attendance values (980,'no', '05/09/2020');
+INSERT INTO Attendance values (1000,'yes', '05/09/2020');
+INSERT INTO Attendance values (1020,'yes', '05/09/2020');
+INSERT INTO Attendance values (1040,'yes', '05/09/2020');
+INSERT INTO Attendance values (1060,'yes', '05/09/2020');
+INSERT INTO Attendance values (1080,'yes', '05/09/2020');
+INSERT INTO Attendance values (1100,'yes', '05/09/2020');
+INSERT INTO Attendance values (1120,'yes', '05/09/2020');
+INSERT INTO Attendance values (1140,'yes', '05/09/2020');
+INSERT INTO Attendance values (1160,'no', '05/09/2020');
+INSERT INTO Attendance values (1180,'yes', '05/09/2020');
+INSERT INTO Attendance values (1200,'yes', '05/09/2020');
+INSERT INTO Attendance values (1220,'yes', '05/09/2020');
+INSERT INTO Attendance values (1240,'yes', '05/09/2020');
+INSERT INTO Attendance values (1260,'yes', '05/09/2020');
+INSERT INTO Attendance values (1280,'yes', '05/09/2020');
+INSERT INTO Attendance values (1300,'yes', '05/09/2020');
+INSERT INTO Attendance values (1320,'yes', '05/09/2020');
+INSERT INTO Attendance values (1340,'yes', '05/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '06/09/2020');
+INSERT INTO Attendance values (140,'yes', '06/09/2020');
+INSERT INTO Attendance values (160,'yes', '06/09/2020');
+INSERT INTO Attendance values (180,'yes', '06/09/2020');
+INSERT INTO Attendance values (200,'yes', '06/09/2020');
+INSERT INTO Attendance values (220,'yes', '06/09/2020');
+INSERT INTO Attendance values (240,'yes', '06/09/2020');
+INSERT INTO Attendance values (260,'yes', '06/09/2020');
+INSERT INTO Attendance values (280,'yes', '06/09/2020');
+INSERT INTO Attendance values (300,'yes', '06/09/2020');
+INSERT INTO Attendance values (320,'yes', '06/09/2020');
+INSERT INTO Attendance values (340,'yes', '06/09/2020');
+INSERT INTO Attendance values (360,'yes', '06/09/2020');
+INSERT INTO Attendance values (380,'no', '06/09/2020');
+INSERT INTO Attendance values (400,'yes', '06/09/2020');
+INSERT INTO Attendance values (420,'yes', '06/09/2020');
+INSERT INTO Attendance values (440,'yes', '06/09/2020');
+INSERT INTO Attendance values (460,'yes', '06/09/2020');
+INSERT INTO Attendance values (480,'yes', '06/09/2020');
+INSERT INTO Attendance values (500,'yes', '06/09/2020');
+INSERT INTO Attendance values (520,'yes', '06/09/2020');
+INSERT INTO Attendance values (540,'yes', '06/09/2020');
+INSERT INTO Attendance values (560,'yes', '06/09/2020');
+INSERT INTO Attendance values (580,'yes', '06/09/2020');
+INSERT INTO Attendance values (600,'yes', '06/09/2020');
+INSERT INTO Attendance values (620,'yes', '06/09/2020');
+INSERT INTO Attendance values (640,'yes', '06/09/2020');
+INSERT INTO Attendance values (660,'yes', '06/09/2020');
+INSERT INTO Attendance values (700,'yes', '06/09/2020');
+INSERT INTO Attendance values (720,'yes', '06/09/2020');
+INSERT INTO Attendance values (740,'yes', '06/09/2020');
+INSERT INTO Attendance values (760,'yes', '06/09/2020');
+INSERT INTO Attendance values (780,'yes', '06/09/2020');
+INSERT INTO Attendance values (820,'yes', '06/09/2020');
+INSERT INTO Attendance values (840,'yes', '06/09/2020');
+INSERT INTO Attendance values (860,'yes', '06/09/2020');
+INSERT INTO Attendance values (880,'no', '06/09/2020');
+INSERT INTO Attendance values (900,'yes', '06/09/2020');
+INSERT INTO Attendance values (920,'yes', '06/09/2020');
+INSERT INTO Attendance values (940,'yes', '06/09/2020');
+INSERT INTO Attendance values (960,'yes', '06/09/2020');
+INSERT INTO Attendance values (980,'yes', '06/09/2020');
+INSERT INTO Attendance values (1000,'yes', '06/09/2020');
+INSERT INTO Attendance values (1020,'yes', '06/09/2020');
+INSERT INTO Attendance values (1040,'no', '06/09/2020');
+INSERT INTO Attendance values (1060,'yes', '06/09/2020');
+INSERT INTO Attendance values (1080,'yes', '06/09/2020');
+INSERT INTO Attendance values (1100,'yes', '06/09/2020');
+INSERT INTO Attendance values (1120,'yes', '06/09/2020');
+INSERT INTO Attendance values (1140,'yes', '06/09/2020');
+INSERT INTO Attendance values (1160,'yes', '06/09/2020');
+INSERT INTO Attendance values (1180,'yes', '06/09/2020');
+INSERT INTO Attendance values (1200,'yes', '06/09/2020');
+INSERT INTO Attendance values (1220,'yes', '06/09/2020');
+INSERT INTO Attendance values (1240,'yes', '06/09/2020');
+INSERT INTO Attendance values (1260,'no', '06/09/2020');
+INSERT INTO Attendance values (1280,'yes', '06/09/2020');
+INSERT INTO Attendance values (1300,'yes', '06/09/2020');
+INSERT INTO Attendance values (1320,'yes', '06/09/2020');
+INSERT INTO Attendance values (1340,'yes', '06/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '08/09/2020');
+INSERT INTO Attendance values (140,'yes', '08/09/2020');
+INSERT INTO Attendance values (160,'yes', '08/09/2020');
+INSERT INTO Attendance values (180,'yes', '08/09/2020');
+INSERT INTO Attendance values (200,'yes', '08/09/2020');
+INSERT INTO Attendance values (220,'yes', '08/09/2020');
+INSERT INTO Attendance values (240,'yes', '08/09/2020');
+INSERT INTO Attendance values (260,'no', '08/09/2020');
+INSERT INTO Attendance values (280,'yes', '08/09/2020');
+INSERT INTO Attendance values (300,'yes', '08/09/2020');
+INSERT INTO Attendance values (320,'yes', '08/09/2020');
+INSERT INTO Attendance values (340,'yes', '08/09/2020');
+INSERT INTO Attendance values (360,'yes', '08/09/2020');
+INSERT INTO Attendance values (380,'yes', '08/09/2020');
+INSERT INTO Attendance values (400,'yes', '08/09/2020');
+INSERT INTO Attendance values (420,'yes', '08/09/2020');
+INSERT INTO Attendance values (440,'yes', '08/09/2020');
+INSERT INTO Attendance values (460,'yes', '08/09/2020');
+INSERT INTO Attendance values (480,'yes', '08/09/2020');
+INSERT INTO Attendance values (500,'yes', '08/09/2020');
+INSERT INTO Attendance values (520,'yes', '08/09/2020');
+INSERT INTO Attendance values (540,'yes', '08/09/2020');
+INSERT INTO Attendance values (560,'yes', '08/09/2020');
+INSERT INTO Attendance values (580,'yes', '08/09/2020');
+INSERT INTO Attendance values (600,'yes', '08/09/2020');
+INSERT INTO Attendance values (620,'yes', '08/09/2020');
+INSERT INTO Attendance values (640,'yes', '08/09/2020');
+INSERT INTO Attendance values (660,'yes', '08/09/2020');
+INSERT INTO Attendance values (700,'yes', '08/09/2020');
+INSERT INTO Attendance values (720,'no', '08/09/2020');
+INSERT INTO Attendance values (740,'yes', '08/09/2020');
+INSERT INTO Attendance values (760,'yes', '08/09/2020');
+INSERT INTO Attendance values (780,'yes', '08/09/2020');
+INSERT INTO Attendance values (820,'yes', '08/09/2020');
+INSERT INTO Attendance values (840,'yes', '08/09/2020');
+INSERT INTO Attendance values (860,'yes', '08/09/2020');
+INSERT INTO Attendance values (880,'yes', '08/09/2020');
+INSERT INTO Attendance values (900,'yes', '08/09/2020');
+INSERT INTO Attendance values (920,'no', '08/09/2020');
+INSERT INTO Attendance values (940,'yes', '08/09/2020');
+INSERT INTO Attendance values (960,'yes', '08/09/2020');
+INSERT INTO Attendance values (980,'yes', '08/09/2020');
+INSERT INTO Attendance values (1000,'yes', '08/09/2020');
+INSERT INTO Attendance values (1020,'no', '08/09/2020');
+INSERT INTO Attendance values (1040,'yes', '08/09/2020');
+INSERT INTO Attendance values (1060,'yes', '08/09/2020');
+INSERT INTO Attendance values (1080,'yes', '08/09/2020');
+INSERT INTO Attendance values (1100,'yes', '08/09/2020');
+INSERT INTO Attendance values (1120,'yes', '08/09/2020');
+INSERT INTO Attendance values (1140,'yes', '08/09/2020');
+INSERT INTO Attendance values (1160,'yes', '08/09/2020');
+INSERT INTO Attendance values (1180,'yes', '08/09/2020');
+INSERT INTO Attendance values (1200,'yes', '08/09/2020');
+INSERT INTO Attendance values (1220,'no', '08/09/2020');
+INSERT INTO Attendance values (1240,'yes', '08/09/2020');
+INSERT INTO Attendance values (1260,'yes', '08/09/2020');
+INSERT INTO Attendance values (1280,'yes', '08/09/2020');
+INSERT INTO Attendance values (1300,'yes', '08/09/2020');
+INSERT INTO Attendance values (1320,'yes', '08/09/2020');
+INSERT INTO Attendance values (1340,'yes', '08/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '09/09/2020');
+INSERT INTO Attendance values (140,'yes', '09/09/2020');
+INSERT INTO Attendance values (160,'yes', '09/09/2020');
+INSERT INTO Attendance values (180,'yes', '09/09/2020');
+INSERT INTO Attendance values (200,'yes', '09/09/2020');
+INSERT INTO Attendance values (220,'yes', '09/09/2020');
+INSERT INTO Attendance values (240,'yes', '09/09/2020');
+INSERT INTO Attendance values (260,'yes', '09/09/2020');
+INSERT INTO Attendance values (280,'yes', '09/09/2020');
+INSERT INTO Attendance values (300,'yes', '09/09/2020');
+INSERT INTO Attendance values (320,'yes', '09/09/2020');
+INSERT INTO Attendance values (340,'yes', '09/09/2020');
+INSERT INTO Attendance values (360,'yes', '09/09/2020');
+INSERT INTO Attendance values (380,'yes', '09/09/2020');
+INSERT INTO Attendance values (400,'yes', '09/09/2020');
+INSERT INTO Attendance values (420,'yes', '09/09/2020');
+INSERT INTO Attendance values (440,'no', '09/09/2020');
+INSERT INTO Attendance values (460,'yes', '09/09/2020');
+INSERT INTO Attendance values (480,'yes', '09/09/2020');
+INSERT INTO Attendance values (500,'yes', '09/09/2020');
+INSERT INTO Attendance values (520,'yes', '09/09/2020');
+INSERT INTO Attendance values (540,'yes', '09/09/2020');
+INSERT INTO Attendance values (560,'yes', '09/09/2020');
+INSERT INTO Attendance values (580,'yes', '09/09/2020');
+INSERT INTO Attendance values (600,'yes', '09/09/2020');
+INSERT INTO Attendance values (620,'yes', '09/09/2020');
+INSERT INTO Attendance values (640,'no', '09/09/2020');
+INSERT INTO Attendance values (660,'yes', '09/09/2020');
+INSERT INTO Attendance values (700,'yes', '09/09/2020');
+INSERT INTO Attendance values (720,'yes', '09/09/2020');
+INSERT INTO Attendance values (740,'yes', '09/09/2020');
+INSERT INTO Attendance values (760,'yes', '09/09/2020');
+INSERT INTO Attendance values (780,'yes', '09/09/2020');
+INSERT INTO Attendance values (820,'yes', '09/09/2020');
+INSERT INTO Attendance values (840,'no', '09/09/2020');
+INSERT INTO Attendance values (860,'yes', '09/09/2020');
+INSERT INTO Attendance values (880,'yes', '09/09/2020');
+INSERT INTO Attendance values (900,'yes', '09/09/2020');
+INSERT INTO Attendance values (920,'yes', '09/09/2020');
+INSERT INTO Attendance values (940,'no', '09/09/2020');
+INSERT INTO Attendance values (960,'yes', '09/09/2020');
+INSERT INTO Attendance values (980,'yes', '09/09/2020');
+INSERT INTO Attendance values (1000,'yes', '09/09/2020');
+INSERT INTO Attendance values (1020,'yes', '09/09/2020');
+INSERT INTO Attendance values (1040,'yes', '09/09/2020');
+INSERT INTO Attendance values (1060,'yes', '09/09/2020');
+INSERT INTO Attendance values (1080,'yes', '09/09/2020');
+INSERT INTO Attendance values (1100,'yes', '09/09/2020');
+INSERT INTO Attendance values (1120,'yes', '09/09/2020');
+INSERT INTO Attendance values (1140,'yes', '09/09/2020');
+INSERT INTO Attendance values (1160,'yes', '09/09/2020');
+INSERT INTO Attendance values (1180,'yes', '09/09/2020');
+INSERT INTO Attendance values (1200,'yes', '09/09/2020');
+INSERT INTO Attendance values (1220,'yes', '09/09/2020');
+INSERT INTO Attendance values (1240,'yes', '09/09/2020');
+INSERT INTO Attendance values (1260,'yes', '09/09/2020');
+INSERT INTO Attendance values (1280,'yes', '09/09/2020');
+INSERT INTO Attendance values (1300,'yes', '09/09/2020');
+INSERT INTO Attendance values (1320,'yes', '09/09/2020');
+INSERT INTO Attendance values (1340,'yes', '09/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '10/09/2020');
+INSERT INTO Attendance values (140,'yes', '10/09/2020');
+INSERT INTO Attendance values (160,'yes', '10/09/2020');
+INSERT INTO Attendance values (180,'no', '10/09/2020');
+INSERT INTO Attendance values (200,'yes', '10/09/2020');
+INSERT INTO Attendance values (220,'yes', '10/09/2020');
+INSERT INTO Attendance values (240,'yes', '10/09/2020');
+INSERT INTO Attendance values (260,'yes', '10/09/2020');
+INSERT INTO Attendance values (280,'no', '10/09/2020');
+INSERT INTO Attendance values (300,'yes', '10/09/2020');
+INSERT INTO Attendance values (320,'yes', '10/09/2020');
+INSERT INTO Attendance values (340,'yes', '10/09/2020');
+INSERT INTO Attendance values (360,'yes', '10/09/2020');
+INSERT INTO Attendance values (380,'yes', '10/09/2020');
+INSERT INTO Attendance values (400,'yes', '10/09/2020');
+INSERT INTO Attendance values (420,'yes', '10/09/2020');
+INSERT INTO Attendance values (440,'yes', '10/09/2020');
+INSERT INTO Attendance values (460,'yes', '10/09/2020');
+INSERT INTO Attendance values (480,'no', '10/09/2020');
+INSERT INTO Attendance values (500,'yes', '10/09/2020');
+INSERT INTO Attendance values (520,'yes', '10/09/2020');
+INSERT INTO Attendance values (540,'yes', '10/09/2020');
+INSERT INTO Attendance values (560,'yes', '10/09/2020');
+INSERT INTO Attendance values (580,'yes', '10/09/2020');
+INSERT INTO Attendance values (600,'yes', '10/09/2020');
+INSERT INTO Attendance values (620,'yes', '10/09/2020');
+INSERT INTO Attendance values (640,'yes', '10/09/2020');
+INSERT INTO Attendance values (660,'yes', '10/09/2020');
+INSERT INTO Attendance values (700,'yes', '10/09/2020');
+INSERT INTO Attendance values (720,'yes', '10/09/2020');
+INSERT INTO Attendance values (740,'yes', '10/09/2020');
+INSERT INTO Attendance values (760,'yes', '10/09/2020');
+INSERT INTO Attendance values (780,'no', '10/09/2020');
+INSERT INTO Attendance values (820,'yes', '10/09/2020');
+INSERT INTO Attendance values (840,'yes', '10/09/2020');
+INSERT INTO Attendance values (860,'yes', '10/09/2020');
+INSERT INTO Attendance values (880,'yes', '10/09/2020');
+INSERT INTO Attendance values (900,'yes', '10/09/2020');
+INSERT INTO Attendance values (920,'yes', '10/09/2020');
+INSERT INTO Attendance values (940,'yes', '10/09/2020');
+INSERT INTO Attendance values (960,'yes', '10/09/2020');
+INSERT INTO Attendance values (980,'yes', '10/09/2020');
+INSERT INTO Attendance values (1000,'yes', '10/09/2020');
+INSERT INTO Attendance values (1020,'yes', '10/09/2020');
+INSERT INTO Attendance values (1040,'yes', '10/09/2020');
+INSERT INTO Attendance values (1060,'yes', '10/09/2020');
+INSERT INTO Attendance values (1080,'yes', '10/09/2020');
+INSERT INTO Attendance values (1100,'yes', '10/09/2020');
+INSERT INTO Attendance values (1120,'yes', '10/09/2020');
+INSERT INTO Attendance values (1140,'yes', '10/09/2020');
+INSERT INTO Attendance values (1160,'yes', '10/09/2020');
+INSERT INTO Attendance values (1180,'yes', '10/09/2020');
+INSERT INTO Attendance values (1200,'yes', '10/09/2020');
+INSERT INTO Attendance values (1220,'yes', '10/09/2020');
+INSERT INTO Attendance values (1240,'yes', '10/09/2020');
+INSERT INTO Attendance values (1260,'yes', '10/09/2020');
+INSERT INTO Attendance values (1280,'yes', '10/09/2020');
+INSERT INTO Attendance values (1300,'yes', '10/09/2020');
+INSERT INTO Attendance values (1320,'yes', '10/09/2020');
+INSERT INTO Attendance values (1340,'yes', '10/09/2020');
+
+INSERT INTO Attendance values (120,'yes', '11/09/2020');
+INSERT INTO Attendance values (140,'yes', '11/09/2020');
+INSERT INTO Attendance values (160,'yes', '11/09/2020');
+INSERT INTO Attendance values (180,'yes', '11/09/2020');
+INSERT INTO Attendance values (200,'yes', '11/09/2020');
+INSERT INTO Attendance values (220,'yes', '11/09/2020');
+INSERT INTO Attendance values (240,'yes', '11/09/2020');
+INSERT INTO Attendance values (260,'no', '11/09/2020');
+INSERT INTO Attendance values (280,'yes', '11/09/2020');
+INSERT INTO Attendance values (300,'yes', '11/09/2020');
+INSERT INTO Attendance values (320,'yes', '11/09/2020');
+INSERT INTO Attendance values (340,'yes', '11/09/2020');
+INSERT INTO Attendance values (360,'yes', '11/09/2020');
+INSERT INTO Attendance values (380,'yes', '11/09/2020');
+INSERT INTO Attendance values (400,'yes', '11/09/2020');
+INSERT INTO Attendance values (420,'yes', '11/09/2020');
+INSERT INTO Attendance values (440,'yes', '11/09/2020');
+INSERT INTO Attendance values (460,'yes', '11/09/2020');
+INSERT INTO Attendance values (480,'yes', '11/09/2020');
+INSERT INTO Attendance values (500,'yes', '11/09/2020');
+INSERT INTO Attendance values (520,'yes', '11/09/2020');
+INSERT INTO Attendance values (540,'yes', '11/09/2020');
+INSERT INTO Attendance values (560,'yes', '11/09/2020');
+INSERT INTO Attendance values (580,'yes', '11/09/2020');
+INSERT INTO Attendance values (600,'yes', '11/09/2020');
+INSERT INTO Attendance values (620,'yes', '11/09/2020');
+INSERT INTO Attendance values (640,'yes', '11/09/2020');
+INSERT INTO Attendance values (660,'yes', '11/09/2020');
+INSERT INTO Attendance values (700,'yes', '11/09/2020');
+INSERT INTO Attendance values (720,'yes', '11/09/2020');
+INSERT INTO Attendance values (740,'yes', '11/09/2020');
+INSERT INTO Attendance values (760,'no', '11/09/2020');
+INSERT INTO Attendance values (780,'yes', '11/09/2020');
+INSERT INTO Attendance values (820,'yes', '11/09/2020');
+INSERT INTO Attendance values (840,'yes', '11/09/2020');
+INSERT INTO Attendance values (860,'yes', '11/09/2020');
+INSERT INTO Attendance values (880,'yes', '11/09/2020');
+INSERT INTO Attendance values (900,'yes', '11/09/2020');
+INSERT INTO Attendance values (920,'yes', '11/09/2020');
+INSERT INTO Attendance values (940,'yes', '11/09/2020');
+INSERT INTO Attendance values (960,'yes', '11/09/2020');
+INSERT INTO Attendance values (980,'yes', '11/09/2020');
+INSERT INTO Attendance values (1000,'yes', '11/09/2020');
+INSERT INTO Attendance values (1020,'yes', '11/09/2020');
+INSERT INTO Attendance values (1040,'yes', '11/09/2020');
+INSERT INTO Attendance values (1060,'no', '11/09/2020');
+INSERT INTO Attendance values (1080,'yes', '11/09/2020');
+INSERT INTO Attendance values (1100,'yes', '11/09/2020');
+INSERT INTO Attendance values (1120,'yes', '11/09/2020');
+INSERT INTO Attendance values (1140,'yes', '11/09/2020');
+INSERT INTO Attendance values (1160,'yes', '11/09/2020');
+INSERT INTO Attendance values (1180,'yes', '11/09/2020');
+INSERT INTO Attendance values (1200,'yes', '11/09/2020');
+INSERT INTO Attendance values (1220,'yes', '11/09/2020');
+INSERT INTO Attendance values (1240,'yes', '11/09/2020');
+INSERT INTO Attendance values (1260,'yes', '11/09/2020');
+INSERT INTO Attendance values (1280,'yes', '11/09/2020');
+
+      corona_staff
+	  
+INSERT INTO corona_staff values (125,'moderate pain','11/09/2020');	  
+INSERT INTO corona_staff values (130,'mild','10/08/2020');	 
+INSERT INTO corona_staff values (121,'critical','20/03/2020');	 
+INSERT INTO corona_staff values (136,'mild','18/07/2020');	 
+INSERT INTO corona_staff values (127,'moderate pain','11/09/2020');	 
+
+      corona_student
+	  
+INSERT INTO corona_student values (1140,'moderate pain','11/04/2020',2);	  
+INSERT INTO corona_student values (980,'mild','10/04/2020',0);	 
+INSERT INTO corona_student values (700,'critical','20/05/2020',1);	 
+INSERT INTO corona_student values (760,'mild','18/07/2020',0);	 
+INSERT INTO corona_student values (320,'moderate pain','11/06/2020',1);	
+
+         floor
+insert into floor  values(1,'first floor');
+insert into floor  values(2,'second floor');
+
+         room
+insert into room values(300,1,5);
+insert into room values(301,1,5);
+insert into room values(302,2,5);
+insert into room values(303,2,5);
+
+         item
+insert into item values (1,'Table','*');
+insert into item values (2,'a chair','*');
+insert into item values (3,'the blackboard','*');
+insert into item values (4,'closet','*');
+insert into item values (5,'microscope','*');
+
+        room_items
+insert into room_items values (1,300,10);
+insert into room_items values (1,301,10);
+insert into room_items values (1,302,5);
+insert into room_items values (1,303,6);
+
+insert into room_items values (2,300,20);
+insert into room_items values (2,301,15);
+insert into room_items values (2,302,10);
+insert into room_items values (2,303,12);
+
+insert into room_items values (3,300,1);
+insert into room_items values (3,301,1);
+insert into room_items values (3,302,1);
+insert into room_items values (3,303,1);
+
+insert into room_items values (4,300,2);
+insert into room_items values (4,301,2);
+insert into room_items values (4,302,2);
+insert into room_items values (4,303,2);
+
+insert into room_items values (5,300,4);	
+
+       club
+insert into club values (100,'Health Club',132,2);
+insert into club values (200,'Scout Club',125,2);
+insert into club values (300,'English Language Club',122,2);	   
+
+      member
+insert into member values (120,100);
+insert into member values (140,100);
+insert into member values (760,200);
+insert into member values (240,200);
+insert into member values (580,300);
+insert into member values (780,300);
+		

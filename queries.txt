@@ -1,0 +1,208 @@
+
+_ _ _ _ _ _ _ _ Queries _ _ _ _ _ _ _ _
+
+_1 //لايجاد كل موظف واسم المنطقة الموجود فيها 
+
+ select a.street_name,s.Staff_Full_Name from staff s join address a on(s.address_id = a.address_id);
+ 
+_2 //لايجاد عدد الموظفين الموجودين في كل منطقة 
+
+ select a.address_id ,count(s.Staff_ID) from address a join staff s on (a.address_id = s.address_id) group by  a.address_id;
+
+_3 //لحساب عدد الموظفين الموجودين في كل نوع موظفين 
+
+ select t.id,t.Name ,count(s.Staff_ID) from StaffType t join staff s on (t.id = s.IDStaffType) group by  t.id,t.Name;
+   
+ *****  or  select IDStaffType , count(Staff_ID) from Staff group by  IDStaffType ;
+ 
+_4 //لايجاداسماء الموظفين الي عايشين بشارع  الصفطاوي الي رقمو 20
+
+ select a.street_name,s.Staff_Full_Name from staff s join address a on(s.address_id = a.address_id) where a.street_name='Al Saftawy';
+   
+_5 // معدل الطالب 
+
+ select IDStudent , round(avg(FinalGrade),2) from ScoreRecord where IDStudent =&sid  group  by IDStudent ;  
+
+_6 // اسماء الطلاب في كل فريق 
+
+ select m.Member_id , s.Name , m.Club_id,c.Club_name from Student s , Member m ,Club c where s.Student_ID =m.Member_id and c.Club_id = m.Club_id ;
+ 
+_7 // عدد العناصر في كل غرفة 
+
+ select  room_number , count(item_id) "Number_Of_Items" from room_items group by room_number ;
+   
+_8 // عدد الطلاب الذين يحملون فصيلة دم معينة 
+
+ select  count(Student_ID) || '  students have a blood type  ' || blood_type from Student group by blood_type order by blood_type ;
+  
+_9 // عدد الموظفين الذين يحملون فصيلة دم معينة
+
+ select  count(Staff_ID) || '  Staffs have a blood type  ' || blood_type from Staff group by blood_type order by blood_type;
+ 
+_10 // عدد الموظفين في كل عنوان
+
+ select  count(Staff_ID) || '  employees live in  ' || address_id from Staff group by address_id order by address_id;
+ 
+_11 // عدد الطلبة في كل عنوان   
+
+ select  count(Student_ID) || '  students live in ' || address_id from Student group by address_id order by address_id ;
+
+_12  // عدد ايام حضور الطالب وعدد ايام غيابه 
+
+ select  IDStudent , count(*) "Attendance days"  , 10-count(*) "Days of absence" from Attendance where IDStudent = &s_id and Attended ='yes' group by IDStudent  ;  
+ 
+_13 // كل مدرس كم شعبة بدرس 
+
+ select  teacher_id  , count(distinct Division_id) "number of AcademicDivision "  from Student , ScoreRecord  where IDStudent = Student_ID group by  teacher_id ;
+  
+_14 // عدد الطلاب الحاصلين على معدل  اعلى من 90 
+
+  select count(avg(FinalGrade)) from ScoreRecord  group by IDStudent having avg(FinalGrade) >= 90 ;
+   
+_15 //   عدد الطلاب الحاصلين على معدل ضمن مدى معين 
+
+ select count(avg(FinalGrade)) from ScoreRecord  group by IDStudent having avg(FinalGrade) >= &low_mark and avg(FinalGrade) < &high_mark ;
+
+_16 // عدد الطلاب الراسبين 
+
+ select count(avg(FinalGrade)) from ScoreRecord  group by IDStudent having  avg(FinalGrade) <= 50 ;
+   
+_17 // اسماء الطلاب الحاصلين على امتياز من كل ليفل 
+
+ select Student_ID , Name from Student  where Student_ID in ( select IDStudent from  ScoreRecord  group by IDStudent having avg(FinalGrade) >= 90  ) and level_id = &level;
+   
+_18 // عدد الطلبة الحاصلين على امتياز في مادة معينة 
+
+ select count(avg(FinalGrade)) from ScoreRecord where IDSubject =&sub_id group by IDStudent having avg(FinalGrade) >= 90;
+
+_19 // عدد المدرسين لمادة معينة 
+
+ select count(teacher_id) , teacher_specialty from teacher group by teacher_specialty;
+ 
+ _20 // عدد الطلاب الحاصلين على اكتياز عند مدرس معين 
+ 
+ select count(avg(FinalGrade)) from ScoreRecord where teacher_id =&tea_id group by IDStudent having avg(FinalGrade) >= 90;
+ 
+ _21 // عدد اعضاء كل نادي 
+ 
+ select Club_id , count(Member_id) "Num_Of_Members" from Member group by Club_id order by Club_id;
+ 
+ _22 // معدل درجات طلاب كل صف
+ 
+ select avg(sum(FinalGrade)/7) " avg of level " from Student , ScoreRecord where Student_ID = IDStudent and level_id =&l_id group by IDStudent;  
+  
+_23 //   الطلاب الذين والدهم عاطل عن العمل 
+
+ select Student_ID , Name from Student where FatherProfession ='null' or FatherProfession = 'not worke';
+ 
+ _24 // الطلاب الذين عدد افراد عائلتهم اكبر من 5
+ 
+ select Student_ID , Name , number_of_family_members from Student where number_of_family_members >= 5 ;
+ 
+ _25 // فحص المدرس هل هو مسؤول نادي ولا لا 
+ 
+ select Club_name from Club where club_head = &tea_id ; 
+ 
+ _26// لايجاد معلومات عن الموظفين الاناث 
+ 
+ select Staff_ID,Staff_Full_Name from staff where Staff_ID in (select Staff_ID from staff where sex ='f');    
+ 
+ 
+ 
+ _ _ _ _ _ _ _  Functions _ _ _ _ _ _ _ _ _
+ 
+ GRANT create  procedure to School;
+ 
+// تحديد عدد سنوات العمل لموظف معين 
+
+  CREATE OR REPLACE  Function service_years (hdate in date) return number 
+  as years number ;
+  begin 
+  years := trunc(months_between(sysdate , hdate)/12 , 0);
+  return years;
+  end; 
+  /
+  
+ الاستدعاء => select Staff_ID , Staff_Full_Name, service_years (DateOfHiring) from Staff; 
+  او 
+   set serveroutput on;
+   declare
+    hdate date;
+    years number;
+    begin
+    hdate:= '10/10/1970';
+    years:=service_years(hdate);
+	dbms_output.put_line(years);
+    end;
+    /
+   
+   
+ _ _ _ _ _ _ _ creating Views _ _ _ _ _ _ _ _ _
+ connect system
+Enter password:
+Connected.
+SQL> GRANT create view to School; 
+
+    CREATE OR REPLACE VIEW Std_personal
+    AS select 
+	Name as "Full Name", LastNameFather , DateOfBirth ,PlaceOfBirth,nationality,religion,Telephone,blood_type,level_id
+	from Student  ; 
+	
+	CREATE OR REPLACE VIEW Sta_personal
+    AS select 
+	Staff_Full_Name as "Full Name", LastNameFather , DateOfBirth ,PlaceOfBirth,nationality,religion,Telephone,blood_type
+	from Staff ; 
+	
+	CREATE OR REPLACE VIEW Std_avg
+    AS select sc.IDStudent "IDStudent" ,s.Name "Name",avg(FinalGrade) "avg" from ScoreRecord sc join Student s on(s.Student_ID = sc.IDStudent)
+    where IDSubject  in(11,12,13,14,15,16,17)
+    group by sc.IDStudent,s.Name order by avg(FinalGrade) DESC ;
+	
+	CREATE OR REPLACE VIEW items_on_floor
+	As select f.floor_number "floor",sum (i.quantity) "quantity" from room_items i join room r 
+	on(i.room_number  = r.room_number ) join floor f on(r.floor_number = f.floor_number )
+	group by f.floor_number;
+	
+	
+	_ _ _ _ _ _  _ Privileges _ _ _ _ _ _ _ _ 
+	
+	create user School identified by 123456;
+	grant create session, create table to School;
+	Alter user School quota 50m on system;
+	grant create sequence to School;
+	
+	CREATE USER Teacher IDENTIFIED by 123456;  
+	GRANT create session,create view to Teacher;    
+	GRANT select, insert , update , delete on School.ScoreRecord to Teacher;   
+	GRANT select, insert , update , delete on School.Attendance to Teacher;
+	GRANT select on School.Student to Teacher;
+    GRANT select on School.teacher to Teacher;
+	
+	CREATE USER secretary IDENTIFIED by 123456;
+	GRANT create session,create view to secretary;
+	GRANT select, insert , update , delete on School.Student to secretary ;
+	GRANT select, insert , update , delete on School.address to secretary ;
+	GRANT select, insert , update , delete on School.Staff to secretary ;
+	GRANT select, insert , update , delete on School.teacher to secretary ;
+	GRANT select, insert , update , delete on School.corona_student to secretary ;
+	GRANT select, insert , update , delete on School.corona_staff to secretary ;
+	GRANT select, insert , update , delete on School.room_items to secretary ;
+	GRANT select, insert , update , delete on School.item to secretary ;
+	GRANT select, insert , update , delete on School.room to secretary ;
+	GRANT select, insert , update , delete on School.floor to secretary ;
+	GRANT select, insert , update , delete on School.Member to secretary ;
+	GRANT select, insert , update , delete on School.Club to secretary ;
+	GRANT select, insert , update , delete on School.Subject to secretary ;
+	GRANT select, insert , update , delete on School.Stu_Level to secretary ;
+	GRANT select, insert , update , delete on School.AcademicDivision to secretary ;
+	GRANT select, insert , update , delete on School.StaffType to secretary ;
+	
+	CREATE USER staff  IDENTIFIED by 123456;
+	GRANT create session,create view to staff;
+	GRANT select on School.Staff to staff;
+	
+	
+	 
+	
+	
+	

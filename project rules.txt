@@ -1,0 +1,54 @@
+Our database talks about a school system and contains tables to store data for employees, labs, students, and school property ... etc
+Here we list some business rules to understand the system :
+
+****student**********
+
+1-each student located in one and only one address 
+2-Each address may has one or more students
+3-each student study and recored one or more subject 
+4-each subject studied and recorded by one or more  students 
+5-each student must be belong to one and only one AcademicDivision
+6-each AcademicDivision must be contain one or more students
+7-each student must be attend one or more times in Attendance
+8-each Attendance must be attended by one and only one student 
+9-each student recored his marks one ore more time in scorerecored //
+10-each scorerecored recoreded by one ore more student //
+11-each student may be contain one and only corona_student // 1 -- 1
+12- each corona_student is a student // 1 -- 1
+
+****staff***********
+
+1-each staff must be located in one and only one address 
+2-each address may be has one or more staff
+3-each staff must be belong to one and only one stafftybe
+4-each stafftybe may be contain one or more staff
+5-each staff must be contain one or more teacher 
+6-each teacher must be belong to one and only one staff
+7-each staff may be contain one and only corona_staff// 1 -- 1
+
+****teacher***********
+3-each teacher may  manage one and only one club
+4-each club must be managed by one and only one teacher 
+5-each teacher must be teach one or more subject 
+6-each subject must be teaching by one or more teacher
+
+****school**************
+
+1-each school must be located in one and only one address
+2-each address may contain one or more schools
+
+*****level*************
+
+1-each level must be contain one or more AcademicDivision
+2-each AcademicDivision must be belong to one only one level
+
+****floor*********
+
+1-each floor must be contain one or more room 
+2-each room must belong to one and only one floor
+3-each room must be contain one or more item
+4-each item must be belong to one or more room 
+
+***
+Instead of creating an intermediate table between the student and the teacher, between the student and the subject,
+and between the teacher and the subject, we reduced that to a table scorerecored
